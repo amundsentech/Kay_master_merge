@@ -1,13 +1,16 @@
 import pandas as pd
-import kaytools.filter_config as config
+import filter_config as config
 
 def pull_sample_ids(data,id_formats=config.sample_id_formats):
     data=data.replace(' ','')
+    ## fix index
     data.index=data.index.astype(int)
+    ##search for columns with samp in thier names 
     sample_ids=[samp for samp in list(data.columns) if ('samp' in samp.lower())]
     print(f'get sample ids from {sample_ids},with forms{id_formats}')
     data['sample_id']=''
     sample_cols=[]
+    ##search for Id formats in the previously found coulmns and merge 
     for i in range(len(id_formats)):
         i_format=id_formats[i]
         for col in sample_ids:
@@ -24,15 +27,17 @@ def pull_sample_ids(data,id_formats=config.sample_id_formats):
                 print(f'{col} is not an id column')
     print(sample_cols)
     data=data.drop(sample_cols,axis=1)
+    #drop data with no values
     for col in data.columns:
         if data[col].isna().sum()==len(data):
             print(f'Drop {col}: no data')
-            data=data.drop(col,axis=1)
-    ##data=data.fillna('')        
+            data=data.drop(col,axis=1) 
     data=data.sort_values('sample_id')
     data=data.set_index('sample_id')
     return data
-
+'''
+column clean up just loops through the mappings
+'''
 def column_cleanup(data,mapping=config.depth_mapping):
     data=data.astype(str)
     for value in mapping.values():
@@ -48,7 +53,9 @@ def column_cleanup(data,mapping=config.depth_mapping):
         except Exception as e:
             print(e)
     return data
-
+'''
+carrot clean up just loops through the mappings
+'''
 def carrot_cleanup(data):
     carrots=['>','<']
     for col in data.columns:
