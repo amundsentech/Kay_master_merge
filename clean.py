@@ -64,10 +64,10 @@ def main(argv):
     print(f'output {spectral_fname}')
     spectral.to_csv(path+spectral_fname)
     
-    print(f'output {spectral_fname}')
+    print(f'output {assay_fname}')
     assays.to_csv(path+assay_fname)
     
-    print(f'output {spectral_fname}')
+    print(f'output {final_fname}')
     final.to_csv(path+final_fname)
 
 if __name__ == "__main__":
