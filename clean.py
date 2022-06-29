@@ -1,6 +1,6 @@
 import getopt,sys
 
-import argparse
+
 import pandas as pd
 import cleaningtools as ct
 import filter_config as config
