@@ -11,10 +11,10 @@
 - carrot_cleanup() 
      - sets values with '<' to 0 (logic here is that a less than value means the value is negligable so ' 0 ')\
      - sets values with > to the proper value or the converted percentage from the converted 'XX_2' column
-Clean.py is the main file to clean and merge the data. Current accepts two arguements.
+## Clean.py is the main file to clean and merge the data. Current accepts two arguements.
     1. The path to the master spectral_data
     2. the path to the master assay data
-clean.py outputs 3 csvs.
+### clean.py outputs 3 csvs.
     1. cleaned file for the spectral master 
     2. cleaned file for the assay master
     3. merged file on the sample_ids with assay data.
