@@ -40,22 +40,18 @@ def main(argv):
     spectral=ct.column_cleanup(spectral,mapping=config.depth_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.file_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.vnir_mapping)
-    spectral=spectral.fillna('')
-    spectral=spectral.replace('nan','')
+    
     #### clean and fill Assay data
     assays=ct.carrot_cleanup(assays)
     assays=ct.column_cleanup(assays,mapping=config.depth_mapping)
     assays=ct.column_cleanup(assays,mapping=config.file_mapping)
-    assays=assays.fillna('')
-    assays=assays.replace('nan','')
+
 
     ## date var for final output file names
-    
-    date=datetime.datetime.today().strftime('%Y_%m_%d')
     #outputnames
-    spectral_fname=f'Master_Spectral_Clean_{date}.csv'
-    assay_fname=f'Master_assay_Clean_{date}.csv'
-    final_fname=f'Master_Spectral_Assay_Merge_Clean_{date}.csv'
+    spectral_fname=f'Master_Spectral_Clean.csv'
+    assay_fname=f'Master_Assay_Clean.csv'
+    final_fname=f'Master_Spec_As_Merge_Clean.csv'
 
     final=pd.merge(assays,spectral,on='sample_id',how='inner',sort=True)
     

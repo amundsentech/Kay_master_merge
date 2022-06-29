@@ -52,6 +52,9 @@ def column_cleanup(data,mapping=config.depth_mapping):
             data=data.drop(key,axis=1)
         except Exception as e:
             print(e)
+    data=data.fillna('')
+    data=data.replace('nan','')
+
     return data
 '''
 carrot clean up just loops through the mappings
@@ -63,24 +66,30 @@ def carrot_cleanup(data):
         data[col]=data[col].astype(str).str.strip()
         more_index=data[col][data[col].str.startswith(carrots[0])].index
         less_index=data[col][data[col].str.startswith(carrots[-1])].index
-        try:
-
-            data.loc[less_index,col]=0.0
-            data2=data.loc[more_index][col].str.replace(carrots[0],'')
-            data.loc[more_index][col]=data2
-            number=data2.unique()[0]
-        except Exception as e: 
-            
-            print(e)
         col2=f'{col}_2'
+        if len(less_index)>0:
+            try:
+                data.loc[less_index,col]=0.0
+                number=data2.unique()[0]
+            except Exception as e: 
+                print(e)
+        
+
+        if len(more_index)>0:
+            try:
+                data2=data.loc[more_index,col].str.replace(carrots[0],'')
+                data.loc[more_index,col]=data2
+            except Exception as e:
+                print(e)
         
         if col2 in data.columns:
-            try:
-                new_index=data[data[col2]!=''].index
-                data.loc[new_index][col]=data[new_index][col2]*data.loc[new_index][col]
-            except Exception as e: 
-                print('No Carrots')
-                print(e)
+            new_index=data[col2][data[col2]!=''].index
+            if len(new_index)>0:
+                try:
+                    data.loc[new_index][col]=data[new_index][col2]*data.loc[new_index][col]
+                except Exception as e: 
+                    print('No Carrots')
+                    print(e)
     return data
 
             
