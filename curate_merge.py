@@ -7,8 +7,9 @@ import filter_config as config
 import datetime
 
 def main(argv):
-    assay_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/drill assays master.csv'
-    spec_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/spectral master.csv'
+    assay_file=config.assay_file
+    spec_file=config.spectral_file
+
     try:
         opts, args = getopt.getopt(argv,"cs:a:",["spec_file=","assay_file="])
         for opt, arg in opts:
@@ -29,7 +30,7 @@ def main(argv):
     assays=pd.read_csv(assay_file)
     spectral=pd.read_csv(spec_file,low_memory=False)
     msg = "Begin Cleaning"
-    print('msg')
+    print(msg)
 
 
     spectral=ct.pull_sample_ids(spectral)
@@ -49,9 +50,9 @@ def main(argv):
 
     ## date var for final output file names
     #outputnames
-    spectral_fname=f'Master_Spectral_Clean.csv'
-    assay_fname=f'Master_Assay_Clean.csv'
-    final_fname=f'Master_Spec_As_Merge_Clean.csv'
+    spectral_fname= config.spec_fname
+    assay_fname= config.assay_fname
+    final_fname= config.final_fname
 
     final=pd.merge(assays,spectral,on='sample_id',how='inner',sort=True)
     

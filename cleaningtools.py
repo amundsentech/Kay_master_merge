@@ -69,8 +69,7 @@ def carrot_cleanup(data):
         col2=f'{col}_2'
         if len(less_index)>0:
             try:
-                data.loc[less_index,col]=0.0
-                number=data2.unique()[0]
+                data[col].str.replace('<','-')
             except Exception as e: 
                 print(e)
         

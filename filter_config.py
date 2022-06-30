@@ -1,6 +1,17 @@
 
-sample_id_formats= "([a-zA-Z]{1}\d{6})","([a-zA-Z]{2}\d{10})"
+
 output_path='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/'
+assay_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/drill assays master.csv'
+spec_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/spectral master.csv'
+
+
+spec_fname=f'drill assays_curate.csv'
+assay_fname=f'spectral_curate.csv'
+final_fname=f'spectral_drill assays_curate_merge.csv'
+
+
+
+sample_id_formats= "([a-zA-Z]{1}\d{6})","([a-zA-Z]{2}\d{10})"
 
 vnir_mapping={
     'Chlorite_vnir':'Chl_vnir',
