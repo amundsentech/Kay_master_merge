@@ -9,7 +9,7 @@
 - column_cleanup()
      - Uses mappings located in the filter config to merge columns with the same name but different column headers
 - carrot_cleanup() 
-     - sets values with '<' to 0 (logic here is that a less than value means the value is negligable so ' 0 ')\
+     - sets values with '<' to - (logic here is that a less than value means the value is negligable so ' 0 ')\
      - sets values with > to the proper value or the converted percentage from the converted 'XX_2' column
 ## Clean.py is the main file to clean and merge the data. Currently accepts two arguements.
     1. The path to the master spectral_data -s
