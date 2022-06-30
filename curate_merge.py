@@ -4,28 +4,35 @@ import getopt,sys
 import pandas as pd
 import cleaningtools as ct
 import filter_config as config
-import datetime
+
 
 def main(argv):
     assay_file=config.assay_file
-    spec_file=config.spectral_file
+    spec_file=config.spec_file
 
     try:
-        opts, args = getopt.getopt(argv,"cs:a:",["spec_file=","assay_file="])
+        opts, args = getopt.getopt(argv,"cs:a:o:",["spectral_file=","assay_file=",'output_path:'])
         for opt, arg in opts:
-            if opt == '-c':
-                print ('test.py -s <spec_file> -a <assay_file>')
+            if opt == '-s':
+                print ('kay_curate_merge.py -s < spectral_file> -a <assay_file> -o <output_path>')
                 sys.exit()
-            elif opt in ("-s", "--spec_file"):
-                spec_file = arg
-            elif opt in ("-a", "--assay_file"):
+            elif opt in ("-s", "--spectral_file"):
                 assay_file = arg
+                print ('assay file is "', assay_file)
 
-        print ('Input file is "', spec_file)
-        print ('Output file is "', spec_file)
+            elif opt in ("-a", "--assay_file"):
+                spec_file = arg
+                print ('Input file is "', assay_file)
+                       
+            elif opt in ("-o", "--output_path"):
+                output_file = arg
+
+                print ('Output file is "', output_file)
     except getopt.GetoptError:
-        print ('test.py -i <assayfile> -o <spectralfile>')
-        print('using default paths')
+        print ('Spectral paths "', config.assay_file)
+        print ('Assay paths "', config.assay_file)
+        print ('Output pth "', config.output_path)
+    
     
     assays=pd.read_csv(assay_file)
     spectral=pd.read_csv(spec_file,low_memory=False)

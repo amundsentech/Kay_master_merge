@@ -13,17 +13,17 @@ def main(argv):
         opts, args = getopt.getopt(argv,"ci:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-c':
-                print ('test.py -i <input_file> -a <output_file>')
+                print ('spectral_curate.py -i <input_file> -a <output_file>')
                 sys.exit()
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
+                print ('Input file is "', assay_file)
             elif opt in ("-o", "--output_file"):
-                assay_file = arg
-        print ('Input file is "', config.spec_file)
-        print ('Output file is "', config.path, config.output)
+                output_file = arg
+                print ('Output file is "', output_file)
     except getopt.GetoptError:
-        print ('test.py -i <input_file> -a <output_file>')
-        print('using default paths')
+        print ('Input file is "', config.assay_file)
+        print ('Output file is "', config.output_path, config.assay_fname)
     
     
     assays=pd.read_csv(assay_file,low_memory=False)
