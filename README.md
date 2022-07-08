@@ -15,12 +15,14 @@
 ## assay_curate.py is the main file to clean the assay data. Currently accepts two arguements.
     1. The path to the master assay_data -i
     2. the output path -o
-    3. will use the default drive location if not specified
+    3. will use the default Google-drive location in the config if input not specified
+    4. if output not specified will edit inplace
     
  ## spectral_curate.py is the main file to clean the assay data. Currently accepts two arguements.
     1. The path to the master spectral_data -i
     2. the output path -o
-    3. will use the default drive location if not specified
+    3. will use the default Google-drive location in the config if input not specified
+    4. if output not specified will edit inplace
 ### curate_merge.py outputs 3 csvs. takes 2 args. the path to the spectral data and the path to the assay data.
     1. cleaned file for the spectral master 
     2. cleaned file for the assay master
