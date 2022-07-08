@@ -16,6 +16,8 @@ except:
 import filter_config as config
 
 def pull_sample_ids(data,id_formats=config.sample_id_formats):
+    print('Sample_ids')
+    
     data=data.replace(' ','')
     ## fix index
     data.index=data.index.astype(int)
@@ -53,10 +55,11 @@ def pull_sample_ids(data,id_formats=config.sample_id_formats):
 column clean up just loops through the mappings
 '''
 def column_cleanup(data,mapping=config.depth_mapping):
+    print('Carrot_ cleanup')
     data=data.astype(str)
     for value in mapping.values():
         if value in data.columns:
-            data[value].fillna('')
+            data[value].fillna('',inplace=True)
         else: 
             data[value]=''
     for key,value in mapping.items():
