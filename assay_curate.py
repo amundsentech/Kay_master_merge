@@ -26,7 +26,7 @@ def main(argv):
                 output_file = arg
                 print ('Output file is ', output_file)
     except getopt.GetoptError:
-        print ('file error read grom google drive')
+        print ('file error read from google drive')
         
 
     print ('Input file is ', assay_file)
