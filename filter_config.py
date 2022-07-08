@@ -5,8 +5,8 @@ assay_file='https://drive.google.com/file/d/1YSK2cDKDI5hNZVqBCCHfxbMzll6k49uf/vi
 spec_file='https://drive.google.com/file/d/1fhu8rJSIa8mkWzznzRN3rCfxUaQu-o5e/view?usp=sharing'
 
 
-assay_fname=f'drill assays.csv'
-spec_fname=f'spectral.csv'
+assay_fname=f'drill assays master.csv'
+spec_fname=f'spectral master.csv'
 
 
 final_fname=f'spectral_drill assays_curate_merge.csv'
