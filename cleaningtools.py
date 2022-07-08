@@ -12,6 +12,7 @@ except:
         print('upgrade pip then try again')
         subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
+        import pandas as pd
 import filter_config as config
 
 def pull_sample_ids(data,id_formats=config.sample_id_formats):
