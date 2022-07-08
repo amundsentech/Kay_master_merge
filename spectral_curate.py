@@ -29,6 +29,7 @@ def main(argv):
     #pull sample ids
     spectral=ct.pull_sample_ids(spectral)
     #### clean and fill spectral data
+    spectral=ct.carrot_cleanup(spectral)
     spectral=ct.column_cleanup(spectral,mapping=config.depth_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.file_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.vnir_mapping)

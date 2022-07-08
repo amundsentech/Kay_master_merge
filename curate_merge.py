@@ -44,7 +44,8 @@ def main(argv):
 
     assays=ct.pull_sample_ids(assays)
 
-    #### clean and fill spectral data
+    #### clean and fill spectral datav
+    spectral=ct.carrot_cleanup(spectral)
     spectral=ct.column_cleanup(spectral,mapping=config.depth_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.file_mapping)
     spectral=ct.column_cleanup(spectral,mapping=config.vnir_mapping)

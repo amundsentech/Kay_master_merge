@@ -70,14 +70,6 @@ def carrot_cleanup(data):
         data[col]=data[col].astype(str).replace({'<':"-"},regex=True)
         data[col]=data[col].astype(str).replace({'>':""},regex=True)
         col2=f'{col}_2'
-        if col2 in data.columns:
-            new_index=data[col2][data[col2]!=''].index
-            if len(new_index)>0:
-                try:
-                    data.loc[new_index,col]=data.loc[new_index,col2]*data.loc[new_index,col]
-                except Exception as e: 
-                    print('No Carrots')
-                    print(e)
     return data
 
             
