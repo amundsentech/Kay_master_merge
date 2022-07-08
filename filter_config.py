@@ -1,12 +1,12 @@
 
 
-output_path='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/ML_data/'
-assay_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/drill assays master.csv'
-spec_file='Google Drive/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/spectral master.csv'
+output_path=''
+assay_file='https://drive.google.com/file/d/1YSK2cDKDI5hNZVqBCCHfxbMzll6k49uf/view?usp=sharing'
+spec_file='https://drive.google.com/file/d/1fhu8rJSIa8mkWzznzRN3rCfxUaQu-o5e/view?usp=sharing'
 
 
-assay_fname=f'drill assays_curate.csv'
-spec_fname=f'spectral_curate.csv'
+assay_fname=f'drill assays.csv'
+spec_fname=f'spectral.csv'
 
 
 final_fname=f'spectral_drill assays_curate_merge.csv'

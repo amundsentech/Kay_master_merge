@@ -8,7 +8,9 @@ import datetime
 
 def main(argv):
     spec_file=config.spec_file
-
+    spec_file='https://drive.google.com/uc?id=' + spec_file.split('/')[-2]
+    output_file=config.output_path+config.spec_fname
+    spectral=pd.read_csv(spec_file,low_memory=False)
     try:
         opts, args = getopt.getopt(argv,"ci:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -17,15 +19,16 @@ def main(argv):
                 sys.exit()
             elif opt in ("-i", "--input_file"):
                 spec_file = arg
-                print ('Input file is "', spec_file)
+                print ('Input file is ',)
+                spectral=pd.read_csv(spec_file)
+                output_file=config.output_path+spec_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
-                print ('Output file is "', output_file)
+                print ('Output file is ', output_file)
     except getopt.GetoptError:
-        print ('Input file is "', config.spec_file)
-        print ('Output file is "', config.output_path, config.spec_fname)
-
-    spectral=pd.read_csv(spec_file,low_memory=False)
+        print ('file error read grom google drive')
+    print ('Input file is ', config.spec_file)
+    print ('Output file is ', output_file)
     #pull sample ids
     spectral=ct.pull_sample_ids(spectral)
     #### clean and fill spectral data
@@ -36,11 +39,11 @@ def main(argv):
 
     spec_fname= config.spec_fname
         ## out put final csvs
-    path=config.output_path
+    path=output_file
 
     
-    print(f'output {spec_fname}')
-    spectral.to_csv(path+spec_fname)
+    print(f'output {output_file}')
+    spectral.to_csv(output_file)
     return spectral
 
 if __name__ == "__main__":
