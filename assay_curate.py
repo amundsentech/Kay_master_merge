@@ -24,16 +24,16 @@ def main(argv):
     output_file=config.output_path+config.assay_fname
     assays=pd.read_csv(assay_file,low_memory=False)
     try:
-        opts, args = getopt.getopt(argv,"ci:o:",["input_file=","output_file="])
+        opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
-            if opt == '-c':
+            if opt == '-r':
                 print ('spectral_curate.py -i <input_file> -a <output_file>')
                 sys.exit()
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
                 print ('Input file is "', assay_file)
                 assay=pd.read_csv(assay_file)
-                output_file=config.output_path+assay_file
+                output_file=assay_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
@@ -58,7 +58,7 @@ def main(argv):
 
     
     print(f'output {assay_fname}')
-    assays.to_csv(path+assay_fname)
+    assays.to_csv(output_file)
     return assays
 
 if __name__ == "__main__":

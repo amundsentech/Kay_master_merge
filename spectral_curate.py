@@ -24,16 +24,16 @@ def main(argv):
     output_file=config.output_path+config.spec_fname
     spectral=pd.read_csv(spec_file,low_memory=False)
     try:
-        opts, args = getopt.getopt(argv,"ci:o:",["input_file=","output_file="])
+        opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
-            if opt == '-c':
+            if opt == '-r':
                 print ('spectral_curate.py -i <input_file> -a <output_file>')
                 sys.exit()
             elif opt in ("-i", "--input_file"):
                 spec_file = arg
                 print ('Input file is ',)
                 spectral=pd.read_csv(spec_file)
-                output_file=config.output_path+spec_file
+                output_file=spec_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
