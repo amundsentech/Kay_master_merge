@@ -28,7 +28,8 @@ def main(argv):
         for opt, arg in opts:
             if opt == '-r':
                 print ('spectral_curate.py -i <input_file> -a <output_file>')
-                sys.exit()
+                print('using defaults if no file specified')
+                
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
                 print ('Input file is "', assay_file)
