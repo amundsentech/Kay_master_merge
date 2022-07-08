@@ -5,8 +5,13 @@ try:
     import pandas as pd
     
 except:
-    print('install pandas')
-    subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
+    try:
+        print('install pandas')
+        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
+    except:
+        print('upgrade pip then try again')
+        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
+        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
 
 import cleaningtools as ct
 import filter_config as config
