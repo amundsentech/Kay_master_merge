@@ -20,8 +20,6 @@ import datetime
 
 def main(argv):
     spec_file=config.spec_file
-    spec_file='https://drive.google.com/uc?id=' + spec_file.split('/')[-2]
-    output_file=config.output_path+config.spec_fname
     spectral=pd.read_csv(spec_file,low_memory=False)
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
@@ -56,7 +54,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    spectral.to_csv(output_file)
+    spectral.to_csv(config.spec_file)
     return spectral
 
 if __name__ == "__main__":

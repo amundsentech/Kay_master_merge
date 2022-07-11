@@ -20,15 +20,13 @@ import datetime
 
 def main(argv):
     assay_file=config.assay_file
-    assay_file='https://drive.google.com/uc?id=' + assay_file.split('/')[-2]
-    output_file=config.output_path+config.assay_fname
     assays=pd.read_csv(assay_file,low_memory=False)
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-r':
-                print ('spectral_curate.py -i <input_file> -a <output_file>')
-                print('using defaults if no file specified')
+                print ('assay_curate.py -i <input_file> -a <output_file>')
+                print('using defaults in config if no file specified')
                 
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
@@ -59,7 +57,7 @@ def main(argv):
 
     
     print(f'output {assay_fname}')
-    assays.to_csv(output_file)
+    assays.to_csv(config.assay_file)
     return assays
 
 if __name__ == "__main__":
