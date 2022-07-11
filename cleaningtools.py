@@ -89,12 +89,13 @@ def carrot_cleanup(data):
         col2=f'{col}_2'
     return data
 
-def lith_cleanup(data):
+def depth_cleanup(data):
     for col in data.columns:
         if data[col].isna().sum()==len(data):
-            print(f'droping {col}')
+            print(f'dropping {col}')
             data.drop(col,axis=1,inplace=True)
-    data.drop(data[data['Hole _ID'].isna()==True].index,axis=0,inplace=True)
+    data.drop(data[(data['Hole _ID'].isna()==True)& (data['Geo'].isna()==True)].index,axis=0,inplace=True)
+    data.loc[data[data['Hole _ID'].isna()==True].index,'Hole _ID']=data.loc[data[data['Hole _ID'].isna()==True].index,'foldername']
     print ('drop na hole ids')
     return data
 
