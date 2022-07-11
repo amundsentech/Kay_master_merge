@@ -1,13 +1,13 @@
 
 
-output_path='/amcdrive/_AZ_Kay/_Master Databases/'
-assay_file='/amcdrive/_AZ_Kay/_Master Databases/drill assays master'
-spec_file='/amcdrive/_AZ_Kay/_Master Databases/spectral master.csv'
-alter_file='/amcdrive/_AZ_Kay/_Master Databases/alteration master.csv'
-mineral_file='/amcdrive/_AZ_Kay/_Master Databases/mineralization master.csv'
-sample_file='/amcdrive/_AZ_Kay/_Master Databases/samples master.csv'
-structure_file='/amcdrive/_AZ_Kay/_Master Databases/stricture master.csv'
-lith_file='/amcdrive/_AZ_Kay/_Master Databases/lithology master.csv'
+output_path='~/amcdrive/_AZ_Kay/_Master Databases/'
+assay_file='~/amcdrive/_AZ_Kay/_Master Databases/drill assays master'
+spec_file='~/amcdrive/_AZ_Kay/_Master Databases/spectral master.csv'
+alter_file='~/amcdrive/_AZ_Kay/_Master Databases/alteration master.csv'
+mineral_file='~/amcdrive/_AZ_Kay/_Master Databases/mineralization master.csv'
+sample_file='~/amcdrive/_AZ_Kay/_Master Databases/samples master.csv'
+structure_file='~/amcdrive/_AZ_Kay/_Master Databases/stricture master.csv'
+lith_file='~/amcdrive/_AZ_Kay/_Master Databases/lithology master.csv'
 
 assay_fname=f'drill assays master.csv'
 spec_fname=f'spectral master.csv'
