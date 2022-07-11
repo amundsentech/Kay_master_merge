@@ -1,6 +1,6 @@
 
 
-output_path=''
+output_path='/home/scott/amcdrive/_AZ_Kay/_Master Databases/'
 assay_file='https://drive.google.com/file/d/1YSK2cDKDI5hNZVqBCCHfxbMzll6k49uf/view?usp=sharing'
 spec_file='https://drive.google.com/file/d/1fhu8rJSIa8mkWzznzRN3rCfxUaQu-o5e/view?usp=sharing'
 
