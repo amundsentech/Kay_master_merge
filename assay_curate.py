@@ -21,6 +21,7 @@ import datetime
 def main(argv):
     assay_file=config.assay_file
     assays=pd.read_csv(assay_file,low_memory=False)
+    output_file=assay_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:

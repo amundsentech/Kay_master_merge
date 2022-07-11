@@ -21,6 +21,7 @@ import datetime
 def main(argv):
     spec_file=config.spec_file
     spectral=pd.read_csv(spec_file,low_memory=False)
+    output_file=spec_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
