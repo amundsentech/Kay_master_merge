@@ -10,9 +10,10 @@ structure_file='~/amcdrive/_AZ_Kay/_Master Databases/stricture master.csv'
 lith_file='~/amcdrive/_AZ_Kay/_Master Databases/lithology master.csv'
 
 assay_fname=assay_file.split('/')[-1]
-spec_fname=spec_file
-alter_fname=alter_file
-mineral_file=mineral_file
-sample_file=sample_file
-structure_file=structure_file
-lith_file=lith_file
+spec_fname=spec_file.split('/')[-1]
+alter_fname=alter_file.split('/')[-1]
+mineral_file=mineral_file.split('/')[-1]
+sample_file=sample_file.split('/')[-1]
+structure_file=structure_file.split('/')[-1]
+lith_file=lith_file.split('/')[-1]
+
