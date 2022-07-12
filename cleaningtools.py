@@ -1,3 +1,4 @@
+from logging import exception
 import sys
 import subprocess
 import math
@@ -111,10 +112,13 @@ def depth_cleanup(data):
         if data[col].isna().sum()==len(data):
             print(f'dropping {col}')
             data.drop(col,axis=1,inplace=True)
-    data.drop(data[(data[hole].isna()==True)& (data[geo].isna()==True)].index,axis=0,inplace=True)
-    data.loc[data[data[hole].isna()==True].index,hole]=data.loc[data[data[hole].isna()==True].index,'foldername']
-    print ('drop na hole ids')
-    
+    try:
+        print ('drop na hole ids')
+        data.drop(data[(data[hole].isna()==True)& (data[geo].isna()==True)].index,axis=0,inplace=True)
+        data.loc[data[data[hole].isna()==True].index,hole]=data.loc[data[data[hole].isna()==True].index,'foldername']
+    except Exception as e:
+        print (e)
+        print ('no hole ids')
     na_num=math.floor(data.shape[1]/2)
     data=data.drop(data[data.isna().sum(axis=1)>=(na_num)].index,axis=0)
     print ('drop na rows')
