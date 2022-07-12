@@ -15,11 +15,12 @@ except:
         import pandas as pd
 
 import cleaningtools as ct
-import filter_config as config
+import assay_config as config
+import file_config as fconfig
 import datetime
 
 def main(argv):
-    assay_file=config.assay_file
+    assay_file=fconfig.assay_file
     assays=pd.read_csv(assay_file,low_memory=False)
     output_file=assay_file
     try:
@@ -53,12 +54,10 @@ def main(argv):
     assays=ct.column_cleanup(assays,mapping=config.file_mapping)
 
     assay_fname= config.assay_fname
-        ## out put final csvs
-    path=config.output_path
 
     
     print(f'output {assay_fname}')
-    assays.to_csv(config.assay_file)
+    assays.to_csv(fconfig.assay_file)
     return assays
 
 if __name__ == "__main__":

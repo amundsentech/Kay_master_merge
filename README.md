@@ -4,7 +4,7 @@
  Current tools:
 - pull_sample_ids()
      - Searchs for columns named something similiar to sample
-     - Takes the values in those columns and matches them to a regex pattern(located in the filter_config) 
+     - Takes the values in those columns and matches them to a regex pattern(located in the file_config) 
      - merges the data based on the sample_id
      - drops columns with no data
 - column_cleanup()

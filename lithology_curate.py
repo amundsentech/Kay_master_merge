@@ -15,7 +15,7 @@ except:
         import pandas as pd
 
 import cleaningtools as ct
-import filter_config as config
+import file_config as config
 import datetime
 
 def main(argv):
