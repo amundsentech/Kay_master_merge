@@ -23,7 +23,7 @@ def pull_sample_ids(data,id_formats=config.sample_id_formats):
     data.index=data.index.astype(int)
     ##search for columns with samp in thier names 
     sample_ids=[samp for samp in list(data.columns) if ('samp' in samp.lower())]
-    print(f'get sample ids from {sample_ids},with forms{id_formats}')
+    print(f'get sample ids from {sample_ids},with forms {id_formats}')
     data['sample_id']=''
     sample_cols=[]
     ##search for Id formats in the previously found coulmns and merge 
