@@ -14,7 +14,7 @@ except:
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
         import pandas as pd
 
-import cleaningtools as ct
+import cleaningtools as ct 
 import assay_config as config
 import file_config as fconfig
 import datetime
@@ -50,13 +50,14 @@ def main(argv):
     assays=ct.pull_sample_ids(assays)
     #### clean and fill spec data
     assays=ct.carrot_cleanup(assays)
-    assays=ct.column_cleanup(assays,mapping=config.depth_mapping)
-    assays=ct.column_cleanup(assays,mapping=config.file_mapping)
+    for map in config.assay_mappings:
+        assays=ct.column_cleanup(assays,mapping=map)
+    
 
     assay_fname= fconfig.assay_fname
 
     
-    print(f"output {assay_fname}")
+    print(f'output {assay_fname}')
     assays.to_csv(fconfig.assay_file)
     return assays
 

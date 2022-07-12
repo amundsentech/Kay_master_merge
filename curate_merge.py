@@ -14,7 +14,7 @@ except:
         subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
         import pandas as pd
-import cleaningtools as ct
+import cleaningtools as ct 
 import file_config as config
 
 

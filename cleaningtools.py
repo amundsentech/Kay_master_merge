@@ -1,5 +1,6 @@
 import sys
 import subprocess
+import math
 try:
     print('check for pandas')
     import pandas as pd
@@ -13,6 +14,7 @@ except:
         subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
         import pandas as pd
+sys.path.append("../configs") 
 import assay_config as config
 
 def pull_sample_ids(data,id_formats=config.sample_id_formats):
@@ -90,12 +92,31 @@ def carrot_cleanup(data):
     return data
 
 def depth_cleanup(data):
+    print('clean up depths and hole_ids')
     for col in data.columns:
+        if 'hole' in col.lower() and 'id' in col.lower():
+            print(f'use {col} as the hole id columns')
+            hole=col
+            if data[hole].str.contains('XX',na=False).any():
+                drop_index=data[data[hole].str.contains('XX',na=False)].index
+                data.drop(drop_index,axis=0,inplace=True)
+        if 'geo' in col.lower():        
+            geo=col
+            print(f'use {col} as the Geo column')
+        if 'sample' in col.lower() and 'id' in col.lower():        
+            sample=col
+            print(f'use {col} as the sample_ id column/ drop na samples')
+            drop_index=data[data[sample].isna()].index
+            data.drop(drop_index,axis=0,inplace=True)
         if data[col].isna().sum()==len(data):
             print(f'dropping {col}')
             data.drop(col,axis=1,inplace=True)
-    data.drop(data[(data['Hole _ID'].isna()==True)& (data['Geo'].isna()==True)].index,axis=0,inplace=True)
-    data.loc[data[data['Hole _ID'].isna()==True].index,'Hole _ID']=data.loc[data[data['Hole _ID'].isna()==True].index,'foldername']
+    data.drop(data[(data[hole].isna()==True)& (data[geo].isna()==True)].index,axis=0,inplace=True)
+    data.loc[data[data[hole].isna()==True].index,hole]=data.loc[data[data[hole].isna()==True].index,'foldername']
     print ('drop na hole ids')
+    
+    na_num=math.floor(data.shape[1]/2)
+    data=data.drop(data[data.isna().sum(axis=1)>=(na_num)].index,axis=0)
+    print ('drop na rows')
     return data
 

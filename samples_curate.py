@@ -13,42 +13,41 @@ except:
         subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
         import pandas as pd
+
 import cleaningtools as ct 
 import file_config as fconfig
-import mineralization_config as config
 import datetime
 
 def main(argv):
-    mineral_file=fconfig.mineral_file
-    mineral=pd.read_csv(mineral_file,low_memory=False)
-    output_file=mineral_file
+    sample_file=fconfig.sample_file
+    sample=pd.read_csv(sample_file,low_memory=False)
+    output_file=sample_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-r':
-                print ('mineralogy_curate.py -i <input_file> -a <output_file>')
+                print ('sample_curate.py -i <input_file> -a <output_file>')
                 print('using defaults if no file specified')
                 
             elif opt in ("-i", "--input_file"):
-                mineral_file = arg
+                sample_file = arg
                 print ('Input file is ',)
-                mineral=pd.read_csv(mineral_file)
-                output_file=mineral_file
+                sample=pd.read_csv(sample_file)
+                output_file=sample_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
     except getopt.GetoptError:
-        print ('file error read from google drive')
-    print ('Input file is ', fconfig.mineral_file)
+        print ('file error read grom google drive')
+    print ('Input file is ', fconfig.sample_file)
     print ('Output file is ', output_file)
-    #### clean and fill mineral data
-    
-    mineral=ct.depth_cleanup(mineral)
+    #### clean and fill sample data
+    sample=ct.depth_cleanup(sample)
 
     
     print(f'output {output_file}')
-    mineral.to_csv(fconfig.mineral_file)
-    return mineral
+    sample.to_csv(fconfig.sample_file)
+    return sample
 
 if __name__ == "__main__":
     main(sys.argv[1:])

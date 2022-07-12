@@ -14,12 +14,12 @@ except:
         subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
         import pandas as pd
 
-import cleaningtools as ct
-import file_config as config
+import cleaningtools as ct 
+import file_config as fconfig
 import datetime
 
 def main(argv):
-    lith_file=config.lith_file
+    lith_file=fconfig.lith_file
     lith=pd.read_csv(lith_file,low_memory=False)
     output_file=lith_file
     try:
@@ -39,14 +39,14 @@ def main(argv):
                 print ('Output file is ', output_file)
     except getopt.GetoptError:
         print ('file error read grom google drive')
-    print ('Input file is ', config.lith_file)
+    print ('Input file is ', fconfig.lith_file)
     print ('Output file is ', output_file)
     #### clean and fill lith data
     lith=ct.depth_cleanup(lith)
 
     
     print(f'output {output_file}')
-    lith.to_csv(config.lith_file)
+    lith.to_csv(fconfig.lith_file)
     return lith
 
 if __name__ == "__main__":
