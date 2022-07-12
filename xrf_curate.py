@@ -49,7 +49,7 @@ def main(argv):
 
     
     print(f'output to {output_file}')
-    xrf.to_csv(fconfig.xrf_file)
+    xrf.to_csv(fconfig.xrf_file,index=False)
     return xrf
 
 if __name__ == "__main__":

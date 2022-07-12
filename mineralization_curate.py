@@ -47,7 +47,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    mineral.to_csv(fconfig.mineral_file)
+    mineral.to_csv(fconfig.mineral_file,index=False)
     return mineral
 
 if __name__ == "__main__":

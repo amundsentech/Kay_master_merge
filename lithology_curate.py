@@ -46,7 +46,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    lith.to_csv(fconfig.lith_file)
+    lith.to_csv(fconfig.lith_file,index=False)
     return lith
 
 if __name__ == "__main__":

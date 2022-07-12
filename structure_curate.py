@@ -46,7 +46,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    structure.to_csv(fconfig.structure_file)
+    structure.to_csv(fconfig.structure_file,index=False)
     return structure
 
 if __name__ == "__main__":

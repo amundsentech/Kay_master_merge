@@ -46,7 +46,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    hyp.to_csv(fconfig.hyp_file)
+    hyp.to_csv(fconfig.hyp_file,index=False)
     return hyp
 
 if __name__ == "__main__":

@@ -46,7 +46,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    sample.to_csv(fconfig.sample_file)
+    sample.to_csv(fconfig.sample_file,index=False)
     return sample
 
 if __name__ == "__main__":
