@@ -56,7 +56,7 @@ def main(argv):
     assay_fname= fconfig.assay_fname
 
     
-    print(f"output {assay_fname}")
+    #print(f"output {assay_fname}")
     assays.to_csv(fconfig.assay_file)
     return assays
 
