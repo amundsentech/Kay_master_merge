@@ -48,7 +48,7 @@ def main(argv):
     xrf=ct.depth_cleanup(xrf)
 
     
-    print(f'output {output_file}')
+    print(f'output to {output_file}')
     xrf.to_csv(fconfig.xrf_file)
     return xrf
 
