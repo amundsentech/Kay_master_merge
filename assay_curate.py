@@ -53,7 +53,7 @@ def main(argv):
     assays=ct.column_cleanup(assays,mapping=config.depth_mapping)
     assays=ct.column_cleanup(assays,mapping=config.file_mapping)
 
-    assay_fname= config.assay_fname
+    assay_fname= fconfig.assay_fname
 
     
     print(f'output {assay_fname}')
