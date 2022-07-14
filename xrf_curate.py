@@ -33,7 +33,7 @@ def main(argv):
                 
             elif opt in ("-i", "--input_file"):
                 xrf_file = arg
-                print ('Input file is ',)
+                print (f'Input file is {arg} ',)
                 xrf=pd.read_csv(xrf_file)
                 output_file=xrf_file
             elif opt in ("-o", "--output_file"):

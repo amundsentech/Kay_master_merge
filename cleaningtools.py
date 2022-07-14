@@ -115,7 +115,7 @@ def depth_cleanup(data):
     try:
         print ('drop na hole ids')
         data.drop(data[(data[hole].isna()==True)& (data[geo].isna()==True)].index,axis=0,inplace=True)
-        data.loc[data[data[hole].isna()==True].index,hole]=data.loc[data[data[hole].isna()==True].index,'foldername']
+        #data.loc[data[data[hole].isna()==True].index,hole]=data.loc[data[data[hole].isna()==True].index,'foldername']
     except Exception as e:
         print (e)
         print ('no hole ids')

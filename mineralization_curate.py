@@ -31,7 +31,7 @@ def main(argv):
                 
             elif opt in ("-i", "--input_file"):
                 mineral_file = arg
-                print ('Input file is ',)
+                print (f'Input file is {arg} ',)
                 mineral=pd.read_csv(mineral_file)
                 output_file=mineral_file
             elif opt in ("-o", "--output_file"):

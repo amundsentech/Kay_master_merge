@@ -32,7 +32,7 @@ def main(argv):
                 
             elif opt in ("-i", "--input_file"):
                 lith_file = arg
-                print ('Input file is ',)
+                print (f'Input file is {arg} ',)
                 lith=pd.read_csv(lith_file)
                 output_file=lith_file
             elif opt in ("-o", "--output_file"):

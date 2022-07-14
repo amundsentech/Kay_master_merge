@@ -34,7 +34,7 @@ def main(argv):
                 
             elif opt in ("-i", "--input_file"):
                 spec_file = arg
-                print ('Input file is ',)
+                print (f'Input file is {arg} ',)
                 spectral=pd.read_csv(spec_file)
                 output_file=spec_file
             elif opt in ("-o", "--output_file"):

@@ -32,7 +32,7 @@ def main(argv):
                 
             elif opt in ("-i", "--input_file"):
                 structure_file = arg
-                print ('Input file is ',)
+                print (f'Input file is {arg} ',)
                 structure=pd.read_csv(structure_file)
                 output_file=structure_file
             elif opt in ("-o", "--output_file"):
