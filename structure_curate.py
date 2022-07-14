@@ -16,6 +16,7 @@ except:
 
 import cleaningtools as ct 
 import file_config as fconfig
+import structure_config as config
 import datetime
 
 def main(argv):
@@ -43,10 +44,12 @@ def main(argv):
     print ('Output file is ', output_file)
     #### clean and fill structure data
     structure=ct.depth_cleanup(structure)
-
+    for map in config.mappings:
+        structure=ct.column_cleanup(structure,mapping=map)
     
     print(f'output {output_file}')
     structure.to_csv(fconfig.structure_file,index=False)
+
     return structure
 
 if __name__ == "__main__":

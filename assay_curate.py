@@ -50,7 +50,7 @@ def main(argv):
     assays=ct.pull_sample_ids(assays)
     #### clean and fill spec data
     assays=ct.carrot_cleanup(assays)
-    for map in config.assay_mappings:
+    for map in config.mappings:
         assays=ct.column_cleanup(assays,mapping=map)
     
 

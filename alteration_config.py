@@ -21,3 +21,4 @@ file_mapping={
     'ProjectPath':'folder'
 }
 
+mappings=[file_mapping]

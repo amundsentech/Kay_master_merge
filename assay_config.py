@@ -20,4 +20,4 @@ file_mapping={
     'foldername':'folder',
     'ProjectPath':'folder'
 }
-assay_mappings=[depth_mapping,file_mapping]
+mappings=[depth_mapping,file_mapping]

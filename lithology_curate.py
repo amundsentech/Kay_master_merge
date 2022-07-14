@@ -16,6 +16,7 @@ except:
 
 import cleaningtools as ct 
 import file_config as fconfig
+import lithology_config as config
 import datetime
 
 def main(argv):
@@ -44,7 +45,8 @@ def main(argv):
     #### clean and fill lith data
     lith=ct.depth_cleanup(lith)
 
-    
+    for map in config.mappings:
+        lith=ct.column_cleanup(lith,mapping=map)
     print(f'output {output_file}')
     lith.to_csv(fconfig.lith_file,index=False)
     return lith

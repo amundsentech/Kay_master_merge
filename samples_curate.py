@@ -16,6 +16,7 @@ except:
 
 import cleaningtools as ct 
 import file_config as fconfig
+import sample_config as config
 import datetime
 
 def main(argv):
@@ -44,7 +45,8 @@ def main(argv):
     #### clean and fill sample data
     sample=ct.depth_cleanup(sample)
 
-    
+    for map in config.mappings:
+        sample=ct.column_cleanup(sample,mapping=map)
     print(f'output {output_file}')
     sample.to_csv(fconfig.sample_file,index=False)
     return sample

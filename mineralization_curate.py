@@ -44,7 +44,8 @@ def main(argv):
     #### clean and fill mineral data
     
     mineral=ct.depth_cleanup(mineral)
-
+    for map in config.mappings:
+        mineral=ct.column_cleanup(mineral,mapping=map)
     
     print(f'output {output_file}')
     mineral.to_csv(fconfig.mineral_file,index=False)

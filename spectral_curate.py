@@ -48,7 +48,7 @@ def main(argv):
     spectral=ct.pull_sample_ids(spectral)
     #### clean and fill spectral data
     spectral=ct.carrot_cleanup(spectral)
-    for map in config.spectral_mappings:
+    for map in config.mappings:
         spectral=ct.column_cleanup(spectral,mapping=map)
 
     spec_fname= fconfig.spec_fname

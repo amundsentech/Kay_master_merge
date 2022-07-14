@@ -20,3 +20,4 @@ file_mapping={
     'foldername':'folder',
     'ProjectPath':'folder'
 }
+mappings=[file_mapping]

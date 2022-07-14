@@ -16,6 +16,7 @@ except:
 
 import cleaningtools as ct 
 import file_config as fconfig
+import hypPackage_config as config
 import datetime
 
 def main(argv):
@@ -44,6 +45,8 @@ def main(argv):
     #### clean and fill hyp data
     hyp=ct.depth_cleanup(hyp)
 
+    for map in config.mappings:
+        hyp=ct.column_cleanup(hyp,mapping=map)
     
     print(f'output {output_file}')
     hyp.to_csv(fconfig.hyp_file,index=False)

@@ -21,3 +21,4 @@ file_mapping={
     'ProjectPath':'folder'
 }
 spectral_mappings=[depth_mapping,file_mapping,vnir_mapping]
+mappings=[file_mapping]

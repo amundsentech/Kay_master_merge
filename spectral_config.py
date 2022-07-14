@@ -20,4 +20,4 @@ file_mapping={
     'foldername':'folder',
     'ProjectPath':'folder'
 }
-spectral_mappings=[depth_mapping,file_mapping,vnir_mapping]
+mappings=[depth_mapping,file_mapping,vnir_mapping]

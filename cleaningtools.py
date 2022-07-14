@@ -101,7 +101,7 @@ def depth_cleanup(data):
             if data[hole].str.contains('XX',na=False).any():
                 drop_index=data[data[hole].str.contains('XX',na=False)].index
                 data.drop(drop_index,axis=0,inplace=True)
-        if 'geo' in col.lower():        
+        if 'geo' == col.lower():        
             geo=col
             print(f'use {col} as the Geo column')
         if 'sample' in col.lower() and 'id' in col.lower():        

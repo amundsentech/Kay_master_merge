@@ -17,6 +17,7 @@ except:
 
 import cleaningtools as ct 
 import file_config as fconfig
+import xrf_config as config
 import datetime
 
 def main(argv):
@@ -46,7 +47,8 @@ def main(argv):
     xrf[xrf=='<LOD']=np.nan
     xrf[xrf=='na']=np.nan
     xrf=ct.depth_cleanup(xrf)
-
+    for map in config.mappings:
+        xrf=ct.column_cleanup(xrf,mapping=map)
     
     print(f'output to {output_file}')
     xrf.to_csv(fconfig.xrf_file,index=False)
