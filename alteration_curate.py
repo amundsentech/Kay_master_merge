@@ -49,7 +49,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    data.to_csv(fconfig.data_file,index=False)
+    data.to_csv(output_file,index=False)
     return data
 
 if __name__ == "__main__":

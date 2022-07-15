@@ -58,7 +58,7 @@ def main(argv):
 
     
     print(f'output {assay_fname}')
-    assays.to_csv(fconfig.assay_file)
+    assays.to_csv(output_file)
     return assays
 
 if __name__ == "__main__":

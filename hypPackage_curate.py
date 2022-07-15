@@ -49,7 +49,7 @@ def main(argv):
         hyp=ct.column_cleanup(hyp,mapping=map)
     
     print(f'output {output_file}')
-    hyp.to_csv(fconfig.hyp_file,index=False)
+    hyp.to_csv(output_file,index=False)
     return hyp
 
 if __name__ == "__main__":

@@ -57,7 +57,7 @@ def main(argv):
 
     
     print(f'output {output_file}')
-    spectral.to_csv(fconfig.spec_file)
+    spectral.to_csv(output_file)
     return spectral
 
 if __name__ == "__main__":

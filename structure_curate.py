@@ -48,7 +48,7 @@ def main(argv):
         structure=ct.column_cleanup(structure,mapping=map)
     
     print(f'output {output_file}')
-    structure.to_csv(fconfig.structure_file,index=False)
+    structure.to_csv(output_file,index=False)
 
     return structure
 

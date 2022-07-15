@@ -48,7 +48,7 @@ def main(argv):
         mineral=ct.column_cleanup(mineral,mapping=map)
     
     print(f'output {output_file}')
-    mineral.to_csv(fconfig.mineral_file,index=False)
+    mineral.to_csv(output_file,index=False)
     return mineral
 
 if __name__ == "__main__":
