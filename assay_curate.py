@@ -20,15 +20,12 @@ import file_config as fconfig
 import datetime
 
 def main(argv):
-    assay_file=fconfig.assay_file
-    assays=pd.read_csv(assay_file,low_memory=False)
-    output_file=assay_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-r':
                 print ('assay_curate.py -i <input_file> -a <output_file>')
-                print('using defaults in config if no file specified')
+                print('using defaults in config, no file specified')
                 
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
@@ -38,8 +35,12 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read from google drive')
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+        assay_file=fconfig.assay_file
+        assays=pd.read_csv(assay_file,low_memory=False)
+        output_file=assay_file
         
 
     print ('Input file is ', assay_file)
