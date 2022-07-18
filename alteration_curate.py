@@ -41,7 +41,7 @@ def main(argv):
         data_file=fconfig.alter_file
         data=pd.read_csv(data_file,low_memory=False)
         output_file=data_file
-    print ('Input file is ', fconfig.alter_file)
+    print ('Input file is ', data_file)
     print ('Output file is ', output_file)
     #### clean and fill alter data
     data=ct.depth_cleanup(data)

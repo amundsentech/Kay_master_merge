@@ -19,9 +19,6 @@ import mineralization_config as config
 import datetime
 
 def main(argv):
-    mineral_file=fconfig.mineral_file
-    mineral=pd.read_csv(mineral_file,low_memory=False)
-    output_file=mineral_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -37,9 +34,13 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read from google drive')
-    print ('Input file is ', fconfig.mineral_file)
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+        mineral_file=fconfig.mineral_file
+        mineral=pd.read_csv(mineral_file,low_memory=False)
+        output_file=mineral_file
+    print ('Input file is ', mineral_file)
     print ('Output file is ', output_file)
     #### clean and fill mineral data
     

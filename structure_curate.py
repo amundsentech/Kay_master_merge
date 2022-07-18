@@ -20,9 +20,6 @@ import structure_config as config
 import datetime
 
 def main(argv):
-    structure_file=fconfig.structure_file
-    structure=pd.read_csv(structure_file,low_memory=False)
-    output_file=structure_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -38,9 +35,13 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read grom google drive')
-    print ('Input file is ', fconfig.structure_file)
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+        structure_file=fconfig.structure_file
+        structure=pd.read_csv(structure_file,low_memory=False)
+        output_file=structure_file
+    print ('Input file is ', structure_file)
     print ('Output file is ', output_file)
     #### clean and fill structure data
     structure=ct.depth_cleanup(structure)

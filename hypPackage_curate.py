@@ -20,9 +20,6 @@ import hypPackage_config as config
 import datetime
 
 def main(argv):
-    hyp_file=fconfig.hyp_file
-    hyp=pd.read_csv(hyp_file,low_memory=False)
-    output_file=hyp_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -38,9 +35,13 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read grom google drive')
-    print ('Input file is ', fconfig.hyp_file)
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+        hyp_file=fconfig.hyp_file
+        hyp=pd.read_csv(hyp_file,low_memory=False)
+        output_file=hyp_file
+    print ('Input file is ', hyp_file)
     print ('Output file is ', output_file)
     #### clean and fill hyp data
     hyp=ct.depth_cleanup(hyp)

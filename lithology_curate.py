@@ -20,9 +20,6 @@ import lithology_config as config
 import datetime
 
 def main(argv):
-    lith_file=fconfig.lith_file
-    lith=pd.read_csv(lith_file,low_memory=False)
-    output_file=lith_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -40,7 +37,10 @@ def main(argv):
                 print ('Output file is ', output_file)
     except getopt.GetoptError:
         print ('file error read grom google drive')
-    print ('Input file is ', fconfig.lith_file)
+        lith_file=fconfig.lith_file
+        lith=pd.read_csv(lith_file,low_memory=False)
+        output_file=lith_file
+    print ('Input file is ', lith_file)
     print ('Output file is ', output_file)
     #### clean and fill lith data
     lith=ct.depth_cleanup(lith)

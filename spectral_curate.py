@@ -21,10 +21,6 @@ import spectral_config as config
 import datetime
 
 def main(argv):
-    spec_file=fconfig.spec_file
-
-    spectral=pd.read_csv(spec_file,low_memory=False)
-    output_file=spec_file
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -40,10 +36,16 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read grom google drive')
-    print ('Input file is ', fconfig.spec_file)
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+        spec_file=fconfig.spec_file
+        spectral=pd.read_csv(spec_file,low_memory=False)
+        output_file=spec_file    
+    print ('Input file is ', spec_file)
     print ('Output file is ', output_file)
+    msg = "Begin Cleaning"
+    print(msg)
     #pull sample ids
     spectral=ct.pull_sample_ids(spectral)
     #### clean and fill spectral data
