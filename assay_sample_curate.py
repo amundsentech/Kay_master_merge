@@ -1,7 +1,6 @@
 import getopt,sys
 import subprocess
 
-from sqlalchemy import false
 try:
     print('check for pandas')
     import pandas as pd
