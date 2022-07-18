@@ -30,7 +30,7 @@ def main(argv):
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
                 print (f'Input file is ', assay_file)
-                assay=pd.read_csv(assay_file)
+                assays=pd.read_csv(assay_file)
                 output_file=assay_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
