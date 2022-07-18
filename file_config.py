@@ -16,7 +16,7 @@ xrf_file='/Volumes/GoogleDrive/Shared drives/AMC Projects/_AZ_Kay/_Master Databa
 
 
 assay_fname=assay_file.split('/')[-1]
-assay_samples_file=assay_samples_file.split('/')[-1]
+assay_samples_fname=assay_samples_file.split('/')[-1]
 spec_fname=spec_file.split('/')[-1]
 alter_fname=alter_file.split('/')[-1]
 mineral_fname=mineral_file.split('/')[-1]

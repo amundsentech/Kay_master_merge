@@ -1,5 +1,7 @@
 import getopt,sys
 import subprocess
+
+from sqlalchemy import false
 try:
     print('check for pandas')
     import pandas as pd
@@ -47,16 +49,18 @@ def main(argv):
     msg = "Begin Cleaning"
     print(msg)
     #depth cleaner
+    
     assays=ct.depth_cleanup(assays)
+
     for map in config.mappings:
         assays=ct.column_cleanup(assays,mapping=map)
-    
 
-    assay_fname= fconfig.assay_fname
+    #assays=ct.pull_hole_ids(assays,id_formats=config.hole_id_formats)
 
-    
+    assay_fname= fconfig.assay_samples_fname
+
     print(f'output {assay_fname}')
-    assays.to_csv(output_file)
+    assays.to_csv(output_file,index=False)
     return assays
 
 if __name__ == "__main__":

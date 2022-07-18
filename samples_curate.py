@@ -47,6 +47,7 @@ def main(argv):
 
     for map in config.mappings:
         sample=ct.column_cleanup(sample,mapping=map)
+    
     print(f'output {output_file}')
     sample.to_csv(output_file,index=False)
     return sample
