@@ -1,25 +1,13 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
+import pandas as pd
 import assay_config as config
 import file_config as fconfig
 import datetime
 
 def main(argv):
+    assay_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -38,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    if len(assay_file)==0:
         assay_file=fconfig.assay_file
         assays=pd.read_csv(assay_file,low_memory=False)
         output_file=assay_file

@@ -17,7 +17,7 @@
      - drop no data columns
      - drop na samples
 ## XX_curate.py is the main curation file for a given data. Currently accepts one arguement.
-
+ex= python3 structure_curate.py -i '/home/seabass/amcdrive/_AZ_Kay/_Master Databases/structure master.csv'
  - Use the 'file_config.py' to point at the locations of the file you want cleaned
  - run using XX_curate.py -r
     1. Each XX_curate.py has an associated config file. Update the configs with column mappings if necessary.

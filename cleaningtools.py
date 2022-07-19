@@ -2,23 +2,36 @@ from logging import exception
 import sys
 import subprocess
 import math
+import importlib
+
+
+
+pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np'}
+def check_packages():
+    for p in pkgs:
+        s = pkgs[p]
+        try:
+            print(f'check for {p}')
+            s = importlib.import_module(p)
+            
+        except ImportError:
+            print(f'{p} is not installed and has to be installed')
+            subprocess.call([sys.executable, '-m', 'pip', 'install', p])
+        finally:
+            s = importlib.import_module(p)
+            print(f'{p} is properly installed')
+    return
 try:
-    print('check for pandas')
-    import pandas as pd
-    
+    check_packages()
 except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-sys.path.append("../configs") 
+    print('upgrade pip then try again')
+    subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
+    check_packages()
+
+    
 import assay_config as config
 
-def pull_sample_ids(data,id_formats=config.sample_id_formats):
+def pull_sample_ids(data,id_formats):
     print('Sample_ids')
     
     data=data.replace(' ','')
@@ -55,7 +68,7 @@ def pull_sample_ids(data,id_formats=config.sample_id_formats):
     data=data.set_index('sample_id')
     return data
 
-def pull_hole_ids(data,id_formats=config.hole_id_formats):
+def pull_hole_ids(data,id_formats):
     print('pulling Hole_ids')
     data=data.replace(' ','')
     ## fix index
@@ -129,7 +142,7 @@ def carrot_cleanup(data):
         col2=f'{col}_2'
     return data
 
-def depth_cleanup(data):
+def depth_cleanup(data,hole_id_formats=[]):
     print('clean up depths and hole_ids')
     for col in data.columns:
         if 'hole' in col.lower() and 'id' in col.lower():
@@ -138,20 +151,20 @@ def depth_cleanup(data):
             if data[hole].str.contains('XX',na=False).any():
                 drop_index=data[data[hole].str.contains('XX',na=False)].index
                 data.drop(drop_index,axis=0,inplace=True)
-
-        for i_format in config.hole_id_formats: 
-            print (f'{col} searching for {i_format}')
-            try:
-                if data[col].str.contains(i_format).any():
-                    extract=data.loc[data[data[hole].isna()==True].index,col].str.extract(i_format, expand=False)
-                    extract=extract.squeeze()
-                    holes=extract.unique()
-                    fill_index=data[data[hole].isna()==True].index
-                    print(f'fill {hole}, {fill_index} with {holes} from {col}')
-                    data.loc[data[data[hole].isna()==True].index,hole]=extract
-            except Exception as e:
-                print (e)
-                print ('no hole ids')
+        if hole_id_formats:
+            for i_format in hole_id_formats: 
+                print (f'{col} searching for {i_format}')
+                try:
+                    if data[col].str.contains(i_format).any():
+                        extract=data.loc[data[data[hole].isna()==True].index,col].str.extract(i_format, expand=False)
+                        extract=extract.squeeze()
+                        holes=extract.unique()
+                        fill_index=data[data[hole].isna()==True].index
+                        print(f'fill {hole}, {fill_index} with {holes} from {col}')
+                        data.loc[data[data[hole].isna()==True].index,hole]=extract
+                except Exception as e:
+                    print (e)
+                    print ('no hole ids')
         if 'geo' == col.lower():        
             geo=col
             print(f'use {col} as the Geo column')

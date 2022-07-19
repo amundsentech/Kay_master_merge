@@ -1,25 +1,13 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
+import pandas as pd
 import file_config as fconfig
 import hypPackage_config as config
 import datetime
 
 def main(argv):
+    hyp_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -38,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    if len(hyp_file)==0:
         hyp_file=fconfig.hyp_file
         hyp=pd.read_csv(hyp_file,low_memory=False)
         output_file=hyp_file

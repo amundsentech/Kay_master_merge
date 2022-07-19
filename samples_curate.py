@@ -1,20 +1,7 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
+import pandas as pd
 import file_config as fconfig
 import sample_config as config
 import datetime

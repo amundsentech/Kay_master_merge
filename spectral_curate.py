@@ -1,26 +1,13 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
-sys.path.append("../")
+import pandas as pd
 import file_config as fconfig
 import spectral_config as config
 import datetime
 
 def main(argv):
+    spec_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -39,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    if len(spec_file)==0:
         spec_file=fconfig.spec_file
         spectral=pd.read_csv(spec_file,low_memory=False)
         output_file=spec_file    

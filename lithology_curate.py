@@ -1,25 +1,13 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
+import pandas as pd 
 import file_config as fconfig
 import lithology_config as config
 import datetime
 
 def main(argv):
+    lith_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -35,8 +23,10 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-    except getopt.GetoptError:
-        print ('file error read grom google drive')
+    except getopt.GetoptError as e:
+        print (e)
+        print ('FILE READ ERROR read from CONFIG')
+    if len(lith_file)==0:
         lith_file=fconfig.lith_file
         lith=pd.read_csv(lith_file,low_memory=False)
         output_file=lith_file

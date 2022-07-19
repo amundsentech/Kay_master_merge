@@ -1,30 +1,18 @@
 import getopt,sys
 import subprocess
-try:
-    print('check for pandas')
-    import pandas as pd
-    
-except:
-    try:
-        print('install pandas')
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-    except:
-        print('upgrade pip then try again')
-        subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
-        subprocess.check_call([sys.executable,'-m','pip','install','pandas'])
-        import pandas as pd
-
 import cleaningtools as ct 
+import pandas as pd
 import file_config as fconfig
 import alteration_config as config
 import datetime
 
 def main(argv):
+    data_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-r':
-                print ('alteration_curate.py -i <input_file> -a <output_file>')
+                print ('curate.py -i <input_file> -a <output_file>')
                 print('using defaults if no file specified')
                 
             elif opt in ("-i", "--input_file"):
@@ -38,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    if len(data_file)==0:
         data_file=fconfig.alter_file
         data=pd.read_csv(data_file,low_memory=False)
         output_file=data_file

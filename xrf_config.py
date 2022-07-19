@@ -1,5 +1,5 @@
 
-sample_id_formats= "([a-zA-Z]{1}\d{6})","([a-zA-Z]{2}\d{10})"
+sample_id_formats= ["(\d{2}\-\d{3})","(\d{2}\-\d{3}[a-zA-Z]{1})","(\d{2}\-\d{2})"]
 
 vnir_mapping={
     'Chlorite_vnir':'Chl_vnir',
