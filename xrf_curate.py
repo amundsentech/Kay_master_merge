@@ -44,7 +44,7 @@ def main(argv):
         xrf=ct.column_cleanup(xrf,mapping=map)
     
     print(f'output to {output_file}')
-    xrf.to_csv(output_file,index=False)
+    xrf.to_csv(output_file)
     return xrf
 
 if __name__ == "__main__":

@@ -28,7 +28,9 @@ except:
     subprocess.check_call([sys.executable,'-m','pip','install','--upgrade','pip'])
     check_packages()
 
-    
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
 import assay_config as config
 
 def pull_sample_ids(data,id_formats):
@@ -58,14 +60,18 @@ def pull_sample_ids(data,id_formats):
             else: 
                 print(f'{col} is not an id column')
     print(sample_cols)
+    data=data.sort_values('sample_id')
+    data=data.set_index('sample_id')
+    # try:
+    #     sample_cols.remove('sample_id')
+    # except Exception as e:
+    #     print(e)
     data=data.drop(sample_cols,axis=1)
     #drop data with no values
     for col in data.columns:
         if data[col].isna().sum()==len(data):
             print(f'Drop {col}: no data')
             data=data.drop(col,axis=1) 
-    data=data.sort_values('sample_id')
-    data=data.set_index('sample_id')
     return data
 
 def pull_hole_ids(data,id_formats):
@@ -104,7 +110,7 @@ def pull_hole_ids(data,id_formats):
 column clean up just loops through the mappings
 '''
 def column_cleanup(data,mapping=config.depth_mapping):
-    print('Carrot_ cleanup')
+    print('Column cleanup')
     data=data.astype(str)
     for value in mapping.values():
         if value in data.columns:
@@ -114,18 +120,21 @@ def column_cleanup(data,mapping=config.depth_mapping):
     for key,value in mapping.items():
         print (f'add {key} to {value} and drop {key}')
         try:
-            data[value]=data[value]+data[key]
-            data[value]=data[value].fillna('')
-            data[value]=data[value].replace({'':'nan'})
+            data[value]=data[value].values.copy()+data[key].values.copy()
+            data[value].fillna('',inplace=True)
+            # data[value].replace({'':'nan'},inplace=True)
             
-            data=data.drop(key,axis=1)
+            data.drop(key,axis=1,inplace=True)
+            # data=pd.concat([data,data[value].copy()],axis=1)
         except Exception as e:
             print(e)
     for col in data.columns:
         try:
             data[col]=data[col].str.strip('nan')
+            
         except Exception as e:
             print(e)
+    data=data.drop(data.filter(like='\r').columns,axis=1)
     return data
 '''
 carrot clean up just loops through the mappings

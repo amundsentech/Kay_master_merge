@@ -35,15 +35,14 @@ def main(argv):
     msg = "Begin Cleaning"
     print(msg)
     #pull sample ids
-    spectral=ct.pull_sample_ids(spectral)
+    spectral=ct.pull_sample_ids(spectral,config.sample_id_formats)
     #### clean and fill spectral data
     spectral=ct.carrot_cleanup(spectral)
     for map in config.mappings:
         spectral=ct.column_cleanup(spectral,mapping=map)
 
     spec_fname= fconfig.spec_fname
-        ## out put final csvs
-    path=output_file
+
 
     
     print(f'output {output_file}')

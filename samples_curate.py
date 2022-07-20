@@ -36,7 +36,7 @@ def main(argv):
         sample=ct.column_cleanup(sample,mapping=map)
     
     print(f'output {output_file}')
-    sample.to_csv(output_file,index=False)
+    sample.to_csv(output_file)
     return sample
 
 if __name__ == "__main__":
