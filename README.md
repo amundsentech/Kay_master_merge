@@ -25,8 +25,7 @@ ex= python3 structure_curate.py -i '/home/seabass/amcdrive/_AZ_Kay/_Master Datab
     2. the output path -o
     4. if output not specified will edit inplace(suggested usage)
     
-### curate_merge.py outputs 1 master csvs also ready to path in the file_config.py
-     ## inprogress
-    1. cleaned file for the spectral master 
-    2. cleaned file for the assay master
-    3. merged file on the sample_ids with assay data.
+### merge_curations2master.py outputs 1 master_MASTER.xlsx to the location It reads from
+ex= python3 merge_curations2master.py -p '/home/seabass/amcdrive/_AZ_Kay/_Master Databases/
+ - run using XX_curate.py -p
+     -p is the path to all the curated .csvs
