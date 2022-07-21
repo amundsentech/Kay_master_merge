@@ -6,7 +6,7 @@ import importlib
 
 
 
-pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np'}
+pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np','openpyxl':'openpyxl'}
 def check_packages():
     for p in pkgs:
         s = pkgs[p]
