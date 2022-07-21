@@ -148,13 +148,13 @@ def main(argv):
     sample_data_names=[]
     hole_data_names=[]
     try:
-        opts, args = getopt.getopt(argv,"ri:",["input_path="])
+        opts, args = getopt.getopt(argv,"rp:",["input_path="])
         for opt, arg in opts:
             if opt == '-r':
-                print ('merge_curations2master.py -i <input_file> ')
+                print ('merge_curations2master.py -p <input_path> ')
                 print('using defaults if no file specified')
                 
-            elif opt in ("-i", "--input_path"):
+            elif opt in ("-p", "--input_path"):
                 path = arg
                 print (f'Input path is {arg} ',)
 
@@ -230,7 +230,7 @@ def main(argv):
             merged_test=merged_test.drop(col,axis=1)
     merged_test=merged_test.sort_values(by=['sample_id','hole_id','from_ft'],ascending=False)
     merged_test=merged_test.set_index('sample_id')
-    print('export')
+    print(f'export {path} master_MASTER.xlsx')
 
     merged_test.to_excel(path+'master_MASTER.xlsx')
 
