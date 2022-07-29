@@ -48,16 +48,15 @@ def main(argv):
     for file in os.listdir(raw_path):
         print(file)
         try:
-            data=pd.read_excel(path+file)
+            data=pd.read_excel(raw_path+file)
             data['FileName']=file
             data_list.append(data)
         except Exception as e:
             print(e)
-    xrf[xrf=='<LOD']=np.nan
-    xrf[xrf=='na']=np.nan
     
     xrf=pd.concat(data_list)
     xrf=xrf.reset_index(drop=True)
+
     xrf[xrf=='<LOD']=np.nan
     xrf[xrf=='na']=np.nan
     for map in config.mappings:
@@ -100,7 +99,7 @@ def main(argv):
     print('drop',drop)
     xrf=ct.remove_depth_errors(xrf)
 
-    starting_cols=['sample_id_xrf','depth_ft','from_ft','to_ft','from_m','to_m','hole_id','geo']
+    starting_cols=['sample_id_xrf','from_ft','to_ft','from_m','to_m','hole_id','geo']
     ending_cols=[col for col in xrf.columns if col not in starting_cols]
     xrf=pd.concat([xrf[starting_cols],xrf[ending_cols]],axis=1)
     print(f'output to {output_file}')

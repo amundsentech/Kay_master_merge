@@ -245,14 +245,14 @@ def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft']):
     return data
 
 def remove_depth_errors(data):
-
+    print("###### remove depth errors ######")
     data.columns=data.columns.str.lower()
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
 
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
     drop=data.loc[data.from_ft>=data.to_ft].index
     data=data.drop(drop)
-    data=data.drop(drop)
+
     drop=data.loc[data.from_m>=data.to_m].index
     data=data.drop(drop)
     return data
