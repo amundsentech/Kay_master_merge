@@ -12,7 +12,7 @@ def main(argv):
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
             if opt == '-r':
-                print ('curate.py -i <input_file> -a <output_file>')
+                print ('alteration_curate.py -i <input_file> -a <output_file>')
                 print('using defaults if no file specified')
                 
             elif opt in ("-i", "--input_file"):
@@ -37,7 +37,7 @@ def main(argv):
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
 
-    
+    data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
     return data

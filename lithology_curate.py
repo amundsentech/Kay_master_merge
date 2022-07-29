@@ -7,7 +7,7 @@ import lithology_config as config
 import datetime
 
 def main(argv):
-    lith_file=[]
+    data_file=[]
     try:
         opts, args = getopt.getopt(argv,"ri:o:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -16,30 +16,33 @@ def main(argv):
                 print('using defaults if no file specified')
                 
             elif opt in ("-i", "--input_file"):
-                lith_file = arg
+                data_file = arg
                 print (f'Input file is {arg} ',)
-                lith=pd.read_csv(lith_file)
-                output_file=lith_file
+                data=pd.read_csv(data_file)
+                output_file=data_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
-    if len(lith_file)==0:
-        lith_file=fconfig.lith_file
-        lith=pd.read_csv(lith_file,low_memory=False)
-        output_file=lith_file
-    print ('Input file is ', lith_file)
+    if len(data_file)==0:
+        data_file=fconfig.lith_file
+        data=pd.read_csv(data_file,low_memory=False)
+        output_file=data_file
+    print ('Input file is ', data_file)
     print ('Output file is ', output_file)
     #### clean and fill lith data
-    lith=ct.depth_cleanup(lith)
+    data=ct.depth_cleanup(data)
 
     for map in config.mappings:
-        lith=ct.column_cleanup(lith,mapping=map)
+        data=ct.column_cleanup(data,mapping=map)
+    while len(data[data.From_ft>data.To_ft].index)>0:
+        [ct.fix_overlaps(data,inx) for inx in data[data.From_ft>data.To_ft].index]
+    data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
-    lith.to_csv(output_file,index=False)
-    return lith
+    data.to_csv(output_file,index=False)
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])
