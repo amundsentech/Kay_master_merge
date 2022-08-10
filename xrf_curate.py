@@ -111,7 +111,7 @@ def main(argv):
         
         data=xrf[xrf.hole_id==hole]
         
-        data.to_excel(hole_path+hole+'_test.xlsx')
+        data.to_excel(hole_path+hole+'.xlsx')
 
     return xrf
 
