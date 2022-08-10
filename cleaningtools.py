@@ -4,9 +4,6 @@ import subprocess
 import math
 import importlib
 
-from regex import E
-
-
 
 pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np','openpyxl':'openpyxl'}
 def check_packages():
