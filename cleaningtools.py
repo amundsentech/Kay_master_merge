@@ -224,6 +224,7 @@ def fix_overlaps(data,inx):
     data.loc[locs,'From_ft']=data.loc[locs,'From_ft'].sort_values(ascending=False)
     data.loc[locs,'To_ft']=data.loc[loc_extra,'To_ft'].sort_values(ascending=False).shift(-1)
     return
+
 def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft']):
     print('###### generate from too depths ######')
     data.columns=data.columns.str.lower()
@@ -245,7 +246,7 @@ def remove_depth_errors(data):
     print("###### remove depth errors ######")
     data.columns=data.columns.str.lower()
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
-
+    data.loc[data.to_ft.isna()==True,'to_m']=data.loc[data.to_ft.isna()==True,'from_m'].shift(-1)
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
     drop=data.loc[data.from_ft>=data.to_ft].index
     data=data.drop(drop)
