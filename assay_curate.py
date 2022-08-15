@@ -37,7 +37,7 @@ def main(argv):
     msg = "Begin Cleaning"
     print(msg)
     #pull sample ids
-    assays=ct.pull_sample_ids(assays)
+    assays=ct.pull_sample_ids(assays,config.sample_id_formats)
     #### clean and fill spec data
     assays=ct.carrot_cleanup(assays)
     for map in config.mappings:
