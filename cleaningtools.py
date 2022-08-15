@@ -19,6 +19,7 @@ def check_packages():
         finally:
             s = importlib.import_module(p)
             print(f'{p} is properly installed')
+        subprocess.call([sys.executable, '-m', 'pip', 'install','--upgrade', 'openpyxl'] )
     return
 try:
     check_packages()
