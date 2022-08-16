@@ -230,7 +230,8 @@ def main(argv):
             merged_test=merged_test.drop(col,axis=1)
     merged_test=merged_test.sort_values(by=['sample_id'],ascending=False)
     merged_test=merged_test.sort_values(by=['hole_id','from_ft'],ascending=True)
-    merged_test=ct.remove_depth_errors(merged_test)
+    #ct.generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft'])
+    #merged_test=ct.remove_depth_errors(merged_test)
     merged_test=merged_test.set_index('sample_id')
     print(f'export {path} master_MASTER.xlsx')
 
