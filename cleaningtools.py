@@ -19,7 +19,7 @@ def check_packages():
         finally:
             s = importlib.import_module(p)
             print(f'{p} is properly installed')
-        subprocess.call([sys.executable, '-m', 'pip', 'install','--upgrade', 'openpyxl'] )
+
     return
 try:
     check_packages()
@@ -251,6 +251,7 @@ def remove_depth_errors(data):
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
     drop=data.loc[data.from_ft>=data.to_ft].index
     data=data.drop(drop)
+
     return data
 
 def get_base_path(path,start_point='_AZ_Kay'):

@@ -36,7 +36,7 @@ def main(argv):
     data=ct.depth_cleanup(data)
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
-
+    data=ct.generate_from_to(data,sort_by=['hole_id','depth_ft'])
     data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
