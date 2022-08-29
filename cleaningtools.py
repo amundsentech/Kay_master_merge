@@ -243,9 +243,11 @@ def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft']):
     data=data.drop_duplicates(['hole_id','from_ft'],keep='first')
     return data
 
-def remove_depth_errors(data):
+def remove_depth_errors(data,sort_by=None):
     print("###### remove depth errors ######")
-    data.columns=data.columns.str.lower()
+    data.columns=[col.replace(' ','').lower() for col in data.columns]
+    if sort_by:
+        data=data.sort_values(sort_by)
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
     data.loc[data.to_ft.isna()==True,'to_m']=data.loc[data.to_ft.isna()==True,'from_m'].shift(-1)
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
