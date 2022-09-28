@@ -245,7 +245,7 @@ def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft']):
 
 def remove_depth_errors(data,sort_by=None):
     print("###### remove depth errors ######")
-    data.columns=[col.str().replace(' ','').lower() for col in data.columns]
+    data.columns=[str(col).replace(' ','').lower() for col in data.columns]
     if sort_by:
         data=data.sort_values(sort_by)
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
