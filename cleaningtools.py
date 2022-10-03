@@ -252,7 +252,9 @@ def remove_depth_errors(data,sort_by=None):
     print(data.to_ft.dtype)
     print(data.from_ft.dtype)
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
-    
+    data['to_m']=pd.to_numeric(data['to_m'],errors='coerce')
+    data['from_ft']=pd.to_numeric(data['from_ft'],errors='coerce')
+    data['from_m']=pd.to_numeric(data['from_m'],errors='coerce')
     data.loc[data.to_ft.isna()==True,'to_m']=data.loc[data.to_ft.isna()==True,'from_m'].shift(-1)
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
     print(data.to_ft.dtype)
