@@ -248,12 +248,17 @@ def remove_depth_errors(data,sort_by=None):
     data.columns=[str(col).replace(' ','').lower() for col in data.columns]
     if sort_by:
         data=data.sort_values(sort_by)
+
+    print(data.to_ft.dtype)
+    print(data.from_ft.dtype)
     data['to_ft']=pd.to_numeric(data['to_ft'],errors='coerce')
+    
     data.loc[data.to_ft.isna()==True,'to_m']=data.loc[data.to_ft.isna()==True,'from_m'].shift(-1)
     data.loc[data.to_ft.isna()==True,'to_ft']=data.loc[data.to_ft.isna()==True,'from_ft'].shift(-1)
-    data['from_ft']=pd.to_numeric(data['from_ft'],errors='coerce')
+    print(data.to_ft.dtype)
+    print(data.from_ft.dtype)
     drop=data.loc[data.from_ft>=data.to_ft].index
-    data=data.drop(drop)
+    data=data.drop(drop,axis=0)
 
     return data
 
