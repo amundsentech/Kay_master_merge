@@ -32,6 +32,7 @@ def main(argv):
         output_file=hyp_file
     print ('Input file is ', hyp_file)
     print ('Output file is ', output_file)
+    print('################ HYPER SPECTRAL #############')
     #### clean and fill hyp data
     hyp=ct.depth_cleanup(hyp)
 

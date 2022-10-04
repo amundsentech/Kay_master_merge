@@ -26,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    print('################ LITHOLOGY #############')
     if len(data_file)==0:
         data_file=fconfig.lith_file
         data=pd.read_csv(data_file,low_memory=False)

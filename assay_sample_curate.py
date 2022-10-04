@@ -33,6 +33,7 @@ def main(argv):
 
     print ('Input file is ', assay_file)
     print ('Output file is ', output_file)
+    print('################ ASSAY SAMPLES #############')
     msg = "Begin Cleaning"
     print(msg)
     #depth cleaner

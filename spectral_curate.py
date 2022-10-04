@@ -38,7 +38,7 @@ def main(argv):
 
     sample_path=base_path+'/_Drilling/_Logs'
 
-
+    print('################ SPECTRAL #############')
     print(msg)
     #pull sample ids
     spectral=ct.pull_sample_ids(spectral,config.sample_id_formats)

@@ -32,6 +32,7 @@ def main(argv):
         output_file=data_file
     print ('Input file is ', data_file)
     print ('Output file is ', output_file)
+    print('################ STRUCTURE #############')
     #### clean and fill structure data
     data=ct.depth_cleanup(data)
     for map in config.mappings:

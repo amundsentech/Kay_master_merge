@@ -260,6 +260,8 @@ def remove_depth_errors(data,sort_by=None):
     print(data.to_ft.dtype)
     print(data.from_ft.dtype)
     drop=data.loc[data.from_ft>=data.to_ft].index
+    print('#######Drop########')
+    print(f'dropping:{len(drop)} rows' )
     data=data.drop(drop,axis=0)
 
     return data

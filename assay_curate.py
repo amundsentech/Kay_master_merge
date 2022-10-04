@@ -34,6 +34,7 @@ def main(argv):
 
     print ('Input file is ', assay_file)
     print ('Output file is ', output_file)
+    print('################ ASSAYS #############')
     msg = "Begin Cleaning"
     print(msg)
     #pull sample ids

@@ -33,7 +33,7 @@ def main(argv):
     print ('Input file is ', mineral_file)
     print ('Output file is ', output_file)
     #### clean and fill mineral data
-    
+    print('################ MINERALIZATION #############')
     mineral=ct.depth_cleanup(mineral)
     for map in config.mappings:
         mineral=ct.column_cleanup(mineral,mapping=map)
