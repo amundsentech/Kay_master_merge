@@ -164,6 +164,8 @@ def depth_cleanup(data,hole_id_formats=[]):
             hole=col
             if data[hole].str.contains('XX',na=False).any():
                 drop_index=data[data[hole].str.contains('XX',na=False)].index
+                print('#######Drop########')
+                print(f'dropping:{len(drop_index)} rows' )
                 data.drop(drop_index,axis=0,inplace=True)
         if hole_id_formats:
             for i_format in hole_id_formats: 
@@ -185,11 +187,18 @@ def depth_cleanup(data,hole_id_formats=[]):
         if 'sample' in col.lower() and 'id' in col.lower():        
             sample=col
             print(f'use {col} as the sample_id column/ drop na samples')
+
             drop_index=data[data[sample].isna()].index
+            print('#######Drop########')
+            print(f'dropping:{len(drop_index)} rows' )
             data.drop(drop_index,axis=0,inplace=True)
     try:
-        
-        data.drop(data[(data[hole].isna()==True)& (data[geo].isna()==True)].index,axis=0,inplace=True)
+
+        print(f'dropping:{len(drop_index)} rows' )
+        drop_index=data[(data[hole].isna()==True)& (data[geo].isna()==True)].index
+        print('#######Drop########')
+        print(f'dropping:{len(drop_index)} rows' )
+        data.drop(drop_index,axis=0,inplace=True)
         print ('drop na hole ids')
     except Exception as e:
         print (e)
