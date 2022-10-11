@@ -49,7 +49,7 @@ def main(argv):
     data=ct.depth_cleanup(data)
     assay_fname= fconfig.assay_samples_fname
     
-    print(f'output {assay_fname}')
+    print(f'output {output_file}')
     data.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')
     return data
