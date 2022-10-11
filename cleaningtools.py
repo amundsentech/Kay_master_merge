@@ -193,19 +193,22 @@ def depth_cleanup(data,hole_id_formats=[]):
             print(f'dropping:{len(drop_index)} rows' )
             data.drop(drop_index,axis=0,inplace=True)
     try:
-
-        print(f'dropping:{len(drop_index)} rows' )
+        print ('drop na hole ids')
         drop_index=data[(data[hole].isna()==True)& (data[geo].isna()==True)].index
         print('#######Drop########')
         print(f'dropping:{len(drop_index)} rows' )
         data.drop(drop_index,axis=0,inplace=True)
-        print ('drop na hole ids')
+        
     except Exception as e:
         print (e)
         print ('no hole ids')
     na_num=math.floor(data.shape[1]/2)
-    data=data.drop(data[data.isna().sum(axis=1)>=(na_num)].index,axis=0)
+    print('#######Drop########')
+    drop_index=data[data.isna().sum(axis=1)>=(na_num)].index
+    print(f'dropping:{len(drop_index)} rows' )
     print ('drop na rows')
+    data=data.drop(drop_index,axis=0)
+    
 
     return data
 
