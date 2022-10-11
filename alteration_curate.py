@@ -34,10 +34,12 @@ def main(argv):
     print ('Output file is ', output_file)
     #### clean and fill alter data
     print('################ ALTERATION #############')
-    data=ct.column_cleanup(data,spaces=False)
-    data=ct.depth_cleanup(data)
+    data=ct.clean_column_names(data,spaces=False)
+    
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
+
+    data=ct.depth_cleanup(data)
     data=ct.remove_depth_errors(data,sort_by=['hole_id','from_ft'])
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
