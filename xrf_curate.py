@@ -116,7 +116,7 @@ def main(argv):
         
         data.to_excel(hole_path+hole+'.xlsx')
 
-    return xrf
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])
