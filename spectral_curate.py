@@ -36,9 +36,10 @@ def main(argv):
     msg = "Begin Cleaning"
     base_path=ct.get_base_path(spec_file,start_point='_AZ_Kay')
 
-    sample_path=base_path+'/_Drilling/_Logs'
     print('------------------------------------------------------------------------------')
     print('################ SPECTRAL #############')
+
+
     print(msg)
     #pull sample ids
     spectral=ct.pull_sample_ids(spectral,config.sample_id_formats)
@@ -89,6 +90,26 @@ def main(argv):
     print(f'output {output_file}')
     spec_final.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')
+    print('################ Onsite SPECTRAL #############')
+
+
+    path=spec_file
+    base_path=ct.get_base_path(path,start_point='_AZ_Kay')
+    terra_sheet=base_path+config.hand_samples
+    sheets=pd.ExcelFile(terra_sheet).sheet_names
+    hyp_hand=pd.DataFrame()
+
+    for sheet in sheets:
+        if 'KM' in sheet:
+            print (sheet)
+            data=pd.read_excel(terra_sheet,sheet)
+            hyp_hand=pd.concat([hyp_hand,data])
+    # crap=hyp_data.filter(like='Unnamed').columns
+    # hyp_samples=hyp_samples.drop(crap,axis=1)
+    hyp_hand=ct.clean_column_names(hyp_hand)
+    hyp_hand=ct.generate_from_to(hyp_hand,sort_by=['sample_id','hole_id','depth'])
+    hyp_hand.to_csv(config.hand_export)
+    hyp_hand
     return spectral
 
 if __name__ == "__main__":

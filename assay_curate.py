@@ -18,7 +18,7 @@ def main(argv):
             elif opt in ("-i", "--input_file"):
                 assay_file = arg
                 print (f'Input file is ', assay_file)
-                assays=pd.read_csv(assay_file)
+                data=pd.read_csv(assay_file)
                 output_file=assay_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
@@ -41,24 +41,22 @@ def main(argv):
     #pull sample ids
     data=ct.pull_sample_ids(data,config.sample_id_formats)
     #### clean and fill spec data
-    data=ct.carrot_cleanup(assays)
+    data=ct.carrot_cleanup(data)
     for map in config.mappings:
-        data=ct.column_cleanup(assays,mapping=map)
+        data=ct.column_cleanup(data,mapping=map)
     
 
     assay_fname= fconfig.assay_fname
     path=assay_file
     base_path=ct.get_base_path(path,start_point='_AZ_Kay')
-    samples=pd.read_csv(path+'/_Master Databases/')
-
-    drill_assays=data.filter(regex=config.drill_ids)
+    samples=pd.read_csv(base_path+config.samples)
     data=pd.merge(samples,data,left_on='sample_id',right_on='sample_id',how='inner')
-
+    
     
     print(f'output {assay_fname}')
-    assays.to_csv(output_file)
+    data.to_csv(output_file)
     print('------------------------------------------------------------------------------')
-    return assays
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])

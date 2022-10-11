@@ -1,6 +1,9 @@
 
 sample_id_formats= "([a-zA-Z]{1}\d{6})","([a-zA-Z]{2}\d{10})"
 
+hand_samples='/_Lab/Terraspec/Terraspec Master.xlsx'
+hand_export='/_Master_databases/onsite_spectral.csv'
+
 vnir_mapping={
     'Chlorite_vnir':'Chl_vnir',
     'Amphibole_vnir':'Amph_vnir',
