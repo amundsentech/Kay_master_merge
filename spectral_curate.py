@@ -37,7 +37,7 @@ def main(argv):
     base_path=ct.get_base_path(spec_file,start_point='_AZ_Kay')
 
     sample_path=base_path+'/_Drilling/_Logs'
-
+    print('------------------------------------------------------------------------------')
     print('################ SPECTRAL #############')
     print(msg)
     #pull sample ids
@@ -88,6 +88,7 @@ def main(argv):
     spec_final=spec_final.sort_values(['hole_id','from_ft','sample_id'])
     print(f'output {output_file}')
     spec_final.to_csv(output_file,index=False)
+    print('------------------------------------------------------------------------------')
     return spectral
 
 if __name__ == "__main__":

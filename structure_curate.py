@@ -32,6 +32,7 @@ def main(argv):
         output_file=data_file
     print ('Input file is ', data_file)
     print ('Output file is ', output_file)
+    print('------------------------------------------------------------------------------')
     print('################ STRUCTURE #############')
     #### clean and fill structure data
     data=ct.depth_cleanup(data)
@@ -40,6 +41,7 @@ def main(argv):
     data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
+    print('------------------------------------------------------------------------------')
 
     return data
 
