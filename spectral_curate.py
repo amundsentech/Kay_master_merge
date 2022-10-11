@@ -77,11 +77,11 @@ def main(argv):
             print(f"{folder} is not a folder")
 
     spec_samples=pd.concat(data_list,axis=0,ignore_index=True)
-    spec_samples=ct.generate_from_to(data,sort_by=['hole_id','depth_ft'])
+    spec_samples=ct.generate_from_to(spec_samples,sort_by=['hole_id','depth_ft'])
 
     spec_samples=ct.remove_depth_errors(spec_samples)
     spec_final=spectral.merge(spec_samples,how='outer',left_on='sample_id',right_on='sample_id')
-    print('#### Final Cleanup #####')
+    print('#### SHUFFLE COLUMNS #####')
     starting_cols=['sample_id','from_ft','to_ft','from_m','to_m','hole_id','geo']
     ending_cols=[col for col in spec_final.columns if col not in starting_cols]
     spec_final=pd.concat([spec_final[starting_cols],spec_final[ending_cols]],axis=1)

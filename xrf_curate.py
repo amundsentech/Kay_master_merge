@@ -99,6 +99,7 @@ def main(argv):
     drop=xrf.loc[xrf.from_ft+10< xrf.to_ft].index
     xrf=xrf.drop(drop,axis=0)
     print('drop',drop)
+    xrf=ct.clean_column_names(xrf)
     xrf=ct.remove_depth_errors(xrf)
 
     starting_cols=['sample_id_xrf','from_ft','to_ft','from_m','to_m','hole_id','geo']
