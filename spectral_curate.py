@@ -109,7 +109,11 @@ def main(argv):
     # hyp_samples=hyp_samples.drop(crap,axis=1)
     hyp_hand=ct.clean_column_names(hyp_hand)
     hyp_hand=ct.generate_from_to(hyp_hand,sort_by=['sample_id','hole_id','depth'])
-    hyp_hand.to_csv(base_path+config.hand_export)
+    hyp_hand=ct.remove_depth_errors(hyp_hand,sort_by=['sample_id','hole_id','from_ft'])
+    
+    output_file=base_path+config.hand_export
+    print(f'output {output_file}')
+    hyp_hand.to_csv(output_file)
     hyp_hand
     return spectral
 
