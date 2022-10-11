@@ -33,6 +33,7 @@ def main(argv):
     print ('Input file is ', data_file)
     print ('Output file is ', output_file)
     #### clean and fill alter data
+    print('------------------------------------------------------------------------------')
     print('################ ALTERATION #############')
     
     
@@ -43,6 +44,7 @@ def main(argv):
     data=ct.remove_depth_errors(data,sort_by=['hole_id','from_ft'])
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
+    print('------------------------------------------------------------------------------')
     return data
 
 if __name__ == "__main__":

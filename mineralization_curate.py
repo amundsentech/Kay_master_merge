@@ -33,6 +33,7 @@ def main(argv):
     print ('Input file is ', mineral_file)
     print ('Output file is ', output_file)
     #### clean and fill mineral data
+    print('------------------------------------------------------------------------------')
     print('################ MINERALIZATION #############')
     mineral=ct.depth_cleanup(mineral)
     for map in config.mappings:
@@ -40,6 +41,7 @@ def main(argv):
     
     print(f'output {output_file}')
     mineral.to_csv(output_file,index=False)
+    print('------------------------------------------------------------------------------')
     return mineral
 
 if __name__ == "__main__":

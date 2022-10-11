@@ -34,6 +34,7 @@ def main(argv):
 
     print ('Input file is ', assay_file)
     print ('Output file is ', output_file)
+    print('------------------------------------------------------------------------------')
     print('################ ASSAYS #############')
     msg = "Begin Cleaning"
     print(msg)
@@ -50,6 +51,7 @@ def main(argv):
     
     print(f'output {assay_fname}')
     assays.to_csv(output_file)
+    print('------------------------------------------------------------------------------')
     return assays
 
 if __name__ == "__main__":

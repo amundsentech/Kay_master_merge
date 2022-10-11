@@ -26,6 +26,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR read from CONFIG')
+    print('------------------------------------------------------------------------------')
     print('################ LITHOLOGY #############')
     if len(data_file)==0:
         data_file=fconfig.lith_file
@@ -43,6 +44,7 @@ def main(argv):
     data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)
+    print('------------------------------------------------------------------------------')
     return data
 
 if __name__ == "__main__":

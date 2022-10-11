@@ -161,6 +161,7 @@ def main(argv):
     except getopt.GetoptError as e:
         print (e)
         print ('FILE READ ERROR: read from CONFIG')
+    print('------------------------------------------------------------------------------')
     if len(path)==0:
         path=fconfig.output_path
     files=[file for file in os.listdir(path) if file.endswith('.csv')]
@@ -236,7 +237,7 @@ def main(argv):
     print(f'export {path} master_MASTER.xlsx')
 
     merged_test.to_excel(path+'master_MASTER.xlsx')
-
+    print('------------------------------------------------------------------------------')
 
 if __name__ == "__main__":
     main(sys.argv[1:])
