@@ -28,16 +28,20 @@ def main(argv):
         print ('FILE READ ERROR read from CONFIG')
     if len(mineral_file)==0:
         mineral_file=fconfig.mineral_file
-        mineral=pd.read_csv(mineral_file,low_memory=False)
+        data=pd.read_csv(mineral_file,low_memory=False)
         output_file=mineral_file
     print ('Input file is ', mineral_file)
     print ('Output file is ', output_file)
     #### clean and fill mineral data
     print('------------------------------------------------------------------------------')
     print('################ MINERALIZATION #############')
-    mineral=ct.depth_cleanup(mineral)
     for map in config.mappings:
         mineral=ct.column_cleanup(mineral,mapping=map)
+
+    data=ct.clean_column_names(data,spaces=True)
+    data=ct.drop_no_data(data)
+    data=ct.depth_cleanup(data)
+    data=ct.remove_depth_errors(data)
     
     print(f'output {output_file}')
     mineral.to_csv(output_file,index=False)
