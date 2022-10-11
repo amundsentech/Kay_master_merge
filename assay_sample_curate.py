@@ -28,7 +28,7 @@ def main(argv):
         print ('FILE READ ERROR read from CONFIG')
     if len(assay_file)==0:        
         assay_file=fconfig.assay_samples_file
-        assays=pd.read_csv(assay_file,low_memory=False)
+        data=pd.read_csv(assay_file,low_memory=False)
         output_file=assay_file
 
     print ('Input file is ', assay_file)
@@ -39,15 +39,16 @@ def main(argv):
     print(msg)
     #depth cleaner
     
-    assays=ct.depth_cleanup(assays)
 
     for map in config.mappings:
-        assays=ct.column_cleanup(assays,mapping=map)
+        data=ct.column_cleanup(data,mapping=map)
 
     #assays=ct.pull_hole_ids(assays,id_formats=config.hole_id_formats)
-
+    data=ct.drop_no_data(data)
+    data=ct.clean_column_names(data)
+    data=ct.depth_cleanup(data)
     assay_fname= fconfig.assay_samples_fname
-
+    
     print(f'output {assay_fname}')
     assays.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')

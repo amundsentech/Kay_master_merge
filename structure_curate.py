@@ -34,10 +34,13 @@ def main(argv):
     print ('Output file is ', output_file)
     print('------------------------------------------------------------------------------')
     print('################ STRUCTURE #############')
-    #### clean and fill structure data
-    data=ct.depth_cleanup(data)
+
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
+    #### clean and fill structure data
+    data=ct.clean_column_names(data,spaces=True)
+    data=ct.drop_no_data(data)
+    data=ct.depth_cleanup(data)
     data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)

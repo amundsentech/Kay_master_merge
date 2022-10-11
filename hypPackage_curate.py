@@ -28,22 +28,24 @@ def main(argv):
         print ('FILE READ ERROR read from CONFIG')
     if len(hyp_file)==0:
         hyp_file=fconfig.hyp_file
-        hyp=pd.read_csv(hyp_file,low_memory=False)
+        data=pd.read_csv(hyp_file,low_memory=False)
         output_file=hyp_file
     print ('Input file is ', hyp_file)
     print ('Output file is ', output_file)
     print('------------------------------------------------------------------------------')
     print('################ HYPER SPECTRAL #############')
     #### clean and fill hyp data
-    hyp=ct.depth_cleanup(hyp)
-
-    for map in config.mappings:
-        hyp=ct.column_cleanup(hyp,mapping=map)
     
+    for map in config.mappings:
+        data=ct.column_cleanup(hyp,mapping=map)
+
+    data=ct.drop_no_data(data)
+    data=ct.clean_column_names(data)
+    data=ct.depth_cleanup(data)
     print(f'output {output_file}')
-    hyp.to_csv(output_file,index=False)
+    data.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')
-    return hyp
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])

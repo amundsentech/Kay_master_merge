@@ -1,6 +1,10 @@
 
 sample_id_formats= "([a-zA-Z]{1}\d{6})","([a-zA-Z]{2}\d{10})"
 hole_id_formats=['([a-zA-Z]{2}\-{1}\d{2}\-{1}\d{2})','([a-zA-Z]{2}\-{1}\d{2}\-{1}\d{2}[a-zA-Z]{1})']
+
+soil_ids="([a-zA-Z]{2}\d{10})"
+drill_ids="([a-zA-Z]{2}\d{10})"
+
 vnir_mapping={
     'Chlorite_vnir':'Chl_vnir',
     'Amphibole_vnir':'Amph_vnir',

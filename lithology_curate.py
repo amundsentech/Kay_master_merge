@@ -35,12 +35,13 @@ def main(argv):
     print ('Input file is ', data_file)
     print ('Output file is ', output_file)
     #### clean and fill lith data
-    data=ct.depth_cleanup(data)
 
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
-    while len(data[data.From_ft>data.To_ft].index)>0:
-        [ct.fix_overlaps(data,inx) for inx in data[data.From_ft>data.To_ft].index]
+    
+    data=ct.clean_column_names(data,spaces=True)
+    data=ct.drop_no_data(data)
+    data=ct.depth_cleanup(data)
     data=ct.remove_depth_errors(data)
     print(f'output {output_file}')
     data.to_csv(output_file,index=False)

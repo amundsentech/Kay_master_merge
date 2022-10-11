@@ -28,7 +28,7 @@ def main(argv):
         print ('FILE READ ERROR read from CONFIG')
     if len(assay_file)==0:
         assay_file=fconfig.assay_file
-        assays=pd.read_csv(assay_file,low_memory=False)
+        data=pd.read_csv(assay_file,low_memory=False)
         output_file=assay_file
         
 
@@ -39,14 +39,20 @@ def main(argv):
     msg = "Begin Cleaning"
     print(msg)
     #pull sample ids
-    assays=ct.pull_sample_ids(assays,config.sample_id_formats)
+    data=ct.pull_sample_ids(data,config.sample_id_formats)
     #### clean and fill spec data
-    assays=ct.carrot_cleanup(assays)
+    data=ct.carrot_cleanup(assays)
     for map in config.mappings:
-        assays=ct.column_cleanup(assays,mapping=map)
+        data=ct.column_cleanup(assays,mapping=map)
     
 
     assay_fname= fconfig.assay_fname
+    path=assay_file
+    base_path=ct.get_base_path(path,start_point='_AZ_Kay')
+    samples=pd.read_csv(path+'/_Master Databases/')
+
+    drill_assays=data.filter(regex=config.drill_ids)
+    data=pd.merge(samples,data,left_on='sample_id',right_on='sample_id',how='inner')
 
     
     print(f'output {assay_fname}')
