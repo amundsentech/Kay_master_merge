@@ -18,7 +18,7 @@ def main(argv):
             elif opt in ("-i", "--input_file"):
                 mineral_file = arg
                 print (f'Input file is {arg} ',)
-                mineral=pd.read_csv(mineral_file)
+                data=pd.read_csv(mineral_file)
                 output_file=mineral_file
             elif opt in ("-o", "--output_file"):
                 output_file = arg
@@ -44,9 +44,9 @@ def main(argv):
     data=ct.remove_depth_errors(data)
     
     print(f'output {output_file}')
-    mineral.to_csv(output_file,index=False)
+    data.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')
-    return mineral
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])

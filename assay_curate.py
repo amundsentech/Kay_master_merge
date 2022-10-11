@@ -60,7 +60,7 @@ def main(argv):
     print(data_merged)
     
     print(f'output {assay_fname}')
-    data.to_csv(output_file)
+    data_merged.to_csv(output_file)
     print('------------------------------------------------------------------------------')
     return data
 
