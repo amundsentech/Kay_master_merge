@@ -16,6 +16,7 @@ vnir_mapping={
 }
 
 depth_mapping={
+    'Sample':'sample_id',
     'DepthFrom':'start_depth',
     'START':'start_depth',
     'END':'end_depth',
