@@ -34,6 +34,7 @@ def main(argv):
     print ('Output file is ', output_file)
     #### clean and fill alter data
     print('################ ALTERATION #############')
+    data=ct.column_cleanup(data,spaces=False)
     data=ct.depth_cleanup(data)
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)

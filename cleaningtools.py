@@ -34,7 +34,7 @@ from tqdm import tqdm
 import assay_config as config
 
 def pull_sample_ids(data,id_formats):
-    print('Sample_ids')
+    print('#### pull Sample_ids ##### ')
     
     data=data.replace(' ','')
     ## fix index
@@ -167,7 +167,7 @@ def depth_cleanup(data,hole_id_formats=[]):
                 print('#######Drop########')
                 print(f'dropping:{len(drop_index)} rows' )
                 data.drop(drop_index,axis=0,inplace=True)
-        if hole_id_formats:
+        if len(hole_id_formats)>0:
             for i_format in hole_id_formats: 
                 print (f'{col} searching for {i_format}')
                 try:
@@ -235,20 +235,27 @@ def fix_overlaps(data,inx):
     data.loc[locs,'To_ft']=data.loc[loc_extra,'To_ft'].sort_values(ascending=False).shift(-1)
     return
 
-def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft']):
+def generate_from_to(data,sort_by=['sample_id','hole_id','depth_ft'],interval=10):
     print('###### generate from too depths ######')
     data.columns=data.columns.str.lower()
+    depthcol=data.filter(like='depth').columns[0]
     data=data.sort_values(sort_by)
-    data['from_ft']=data['depth_ft']
+    data['from_ft']=data[depthcol]
     for hole in data.hole_id.unique():
-        data.loc[data.hole_id==hole,'from_ft']=pd.to_numeric(data.loc[data.hole_id==hole,'depth_ft'].values,errors='coerce')
+        #shift the data and to create to_ft values
+        data.loc[data.hole_id==hole,'from_ft']=pd.to_numeric(data.loc[data.hole_id==hole,depthcol].values,errors='coerce')
         data.loc[data.hole_id==hole,'to_ft']=data.loc[data.hole_id==hole,'from_ft'].shift(-1).values-.5
+        ##fill the very end with values
+        data.loc[data.hole_id==hole,'to_ft'].fillna(data.loc[data.hole_id==hole,'from_ft']+interval-.5)
+        ## generate the meter values
         data.loc[data.hole_id==hole,'from_m']=data.loc[data.hole_id==hole,'from_ft'].values*0.3048
         data.loc[data.hole_id==hole,'to_m']=data.loc[data.hole_id==hole,'to_ft'].values*0.3048
+        
     data=data.drop(data.filter(like='depth'),axis=1)
-    data.loc[data.from_ft> data.to_ft,'to_ft']=data.loc[data.from_ft> data.to_ft,'from_ft']+10
+    data.loc[data.from_ft> data.to_ft,'to_ft']=data.loc[data.from_ft> data.to_ft,'from_ft']+interval
     data.loc[data.from_m> data.to_m,'from_m']=data.loc[data.from_m> data.to_m,'from_ft']*0.3048
     data.loc[data.from_m> data.to_m,'to_m']=data.loc[data.from_m> data.to_m,'to_ft']*0.3048
+
     data=data.drop_duplicates(['hole_id','from_ft'],keep='first')
     return data
 
@@ -275,6 +282,13 @@ def remove_depth_errors(data,sort_by=None):
 
     return data
 
+def clean_column_names(data,spaces=False):
+        if spaces==True:
+            data.columns=[c.lower().replace(' ','') for c in data.columns]
+
+        data.columns=[c.lower().replace(' ','_') for c in data.columns]
+        return data
+        
 def get_base_path(path,start_point='_AZ_Kay'):
     path_list=path.split('/')
     b=path_list.index(start_point)
