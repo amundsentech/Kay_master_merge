@@ -36,7 +36,7 @@ def main(argv):
     print('------------------------------------------------------------------------------')
     print('################ MINERALIZATION #############')
     for map in config.mappings:
-        mineral=ct.column_cleanup(mineral,mapping=map)
+        data=ct.column_cleanup(data,mapping=map)
 
     data=ct.clean_column_names(data,spaces=True)
     data=ct.drop_no_data(data)
