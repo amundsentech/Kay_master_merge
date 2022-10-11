@@ -44,7 +44,7 @@ def main(argv):
     data=ct.carrot_cleanup(data)
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
-    data=ct.clean_column_names
+    data=ct.clean_column_names(data)
     data=ct.drop_no_data(data)
     
     print('------------------------------------------------------------------------------')
