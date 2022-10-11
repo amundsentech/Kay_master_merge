@@ -45,13 +45,13 @@ def main(argv):
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
     
-
+    print('------------------------------------------------------------------------------')
+    print('################ MERGE ASSAYS WITH ASSAY SAMPLES #############')
     assay_fname= fconfig.assay_fname
-    path=assay_file
-    base_path=ct.get_base_path(path,start_point='_AZ_Kay')
+    base_path=ct.get_base_path(assay_file,start_point='_AZ_Kay')
     samples=pd.read_csv(base_path+config.samples)
     data=pd.merge(samples,data,left_on='sample_id',right_on='sample_id',how='inner')
-    
+
     
     print(f'output {assay_fname}')
     data.to_csv(output_file)

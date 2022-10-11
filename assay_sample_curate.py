@@ -50,9 +50,9 @@ def main(argv):
     assay_fname= fconfig.assay_samples_fname
     
     print(f'output {assay_fname}')
-    assays.to_csv(output_file,index=False)
+    data.to_csv(output_file,index=False)
     print('------------------------------------------------------------------------------')
-    return assays
+    return data
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -51,7 +51,7 @@ def main(argv):
     data_list=[]
     i=0
     print('#### start pulling hyper spectral sample ids######')
-    for folder in os.listdir(sample_path):
+    for folder in os.listdir(base_path+config.sample_path):
         folder=sample_path+'/'+folder
         if os.path.isdir(folder):
             for file in os.listdir(folder):
@@ -93,8 +93,7 @@ def main(argv):
     print('################ Onsite SPECTRAL #############')
 
 
-    path=spec_file
-    base_path=ct.get_base_path(path,start_point='_AZ_Kay')
+    base_path=ct.get_base_path(spec_file,start_point='_AZ_Kay')
     terra_sheet=base_path+config.hand_samples
     sheets=pd.ExcelFile(terra_sheet).sheet_names
     hyp_hand=pd.DataFrame()
