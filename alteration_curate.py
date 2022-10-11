@@ -40,6 +40,7 @@ def main(argv):
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
     data=ct.clean_column_names(data,spaces=True)
+    data=ct.drop_no_data(data)
     data=ct.depth_cleanup(data)
     data=ct.remove_depth_errors(data,sort_by=['hole_id','from_ft'])
     print(f'output {output_file}')

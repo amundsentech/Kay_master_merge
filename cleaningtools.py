@@ -205,6 +205,7 @@ def depth_cleanup(data,hole_id_formats=[]):
     na_num=math.floor(data.shape[1]/2)
     print('#######Drop########')
     print ('drop na rows')
+    
     drop_index=data[data.isna().sum(axis=1)>=(na_num)].index
     print(f'dropping:{len(drop_index)} rows' )
     

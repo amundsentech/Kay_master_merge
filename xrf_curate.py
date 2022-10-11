@@ -36,7 +36,9 @@ def main(argv):
         print ('no_input use ', output_file)
     print ('Input file is ', xrf_file)
     print ('Output file is ', output_file)
-
+    
+    print('------------------------------------------------------------------------------')
+    print('################ XRF #############')
     #### clean and fill xrf data
     path=xrf_file
     base_path=ct.get_base_path(path,start_point='_AZ_Kay')
