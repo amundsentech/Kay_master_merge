@@ -46,16 +46,18 @@ def main(argv):
         data=ct.column_cleanup(data,mapping=map)
     data=ct.clean_column_names(data)
     data=ct.drop_no_data(data)
+    data=data.reset_index()
     
     print('------------------------------------------------------------------------------')
     print('################ MERGE ASSAYS WITH ASSAY SAMPLES #############')
     assay_fname= fconfig.assay_fname
     base_path=ct.get_base_path(assay_file,start_point='_AZ_Kay')
     samples=pd.read_csv(base_path+config.samples)
+    
     data_merged=pd.merge(samples,data,left_on='sample_id',right_on='sample_id',how='inner')
-    print(data_merged)
     print(data)
     print(samples)
+    print(data_merged)
     
     print(f'output {assay_fname}')
     data.to_csv(output_file)
