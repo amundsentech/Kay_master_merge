@@ -217,6 +217,7 @@ def depth_cleanup(data,hole_id_formats=[]):
 
 def drop_no_data(data):
     print('Drop no data columns')
+    dropped_cols=[]
     for col in data.columns:
         try:
             data[col]=data[col].replace({'':np.nan})
@@ -224,10 +225,12 @@ def drop_no_data(data):
             print(e)
         try:
             if data[col].isna().sum()==len(data):
-                print(f'Drop {col}: no data')
+                dropped_cols.append(col)
                 data.drop(col,axis=1,inplace=True)
         except Exception as e:
+
             print(e)
+    print(f'Dropped {dropped_cols}: no data')
     return data
 
 def xrf_id_clean(data):
