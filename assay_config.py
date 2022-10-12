@@ -7,7 +7,9 @@ drill_ids="([a-zA-Z]{2}\d{10})"
 
 samples='/_Master Databases/drill assay samples master.csv'
 
-soils='/_Lab/Terraspec/Terraspec Master.xlsx'
+soils='/_Lab/Soil Assays/'
+soil_export='/_Master Databases/assay master soil.csv'
+
 
 vnir_mapping={
     'Chlorite_vnir':'Chl_vnir',

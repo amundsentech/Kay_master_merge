@@ -2,6 +2,7 @@ import getopt,sys
 import subprocess
 import cleaningtools as ct 
 import pandas as pd
+import os
 import assay_config as config
 import file_config as fconfig
 import datetime
@@ -55,9 +56,34 @@ def main(argv):
     samples=pd.read_csv(base_path+config.samples)
     
     data_merged=pd.merge(samples,data,left_on='sample_id',right_on='sample_id',how='inner')
-    print(data)
-    print(samples)
-    print(data_merged)
+
+
+
+    print('------------------------------------------------------------------------------')
+    print('################ Assay Soils #############')
+    directory=base_path+config.soils
+    soil=pd.DataFrame()
+    for file in os.listdir(directory):
+        print(file)
+        skip=0
+
+        broken = True
+        while (broken==True) and (skip<=20):
+            skip+=1
+            try: 
+                data=pd.read_csv(directory+file,skiprows=skip,header=0)
+                cols = [c.lower().replace(' ','') for c in data.columns]
+                #print(cols)
+                if 'sample' in cols:
+                    #print('data on line',skip)
+                    data=data.drop(0)
+                    broken=False
+            except Exception as e:
+                pass
+
+        soil=pd.concat([soil,data])
+    soil.to_csv(base_path+config.soil_export)
+
     
     print(f'output {assay_fname}')
     data_merged.to_csv(output_file)
