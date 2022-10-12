@@ -15,6 +15,7 @@ depth_mapping={
     }
 
 file_mapping={
+    'Hole _ID':'Hole_ID',
     'FileName':'file',
     'filename':'file',
     'foldername':'folder',
