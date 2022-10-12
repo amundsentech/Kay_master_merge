@@ -115,7 +115,7 @@ def pull_hole_ids(data,id_formats):
 column clean up just loops through the mappings
 '''
 def column_cleanup(data,mapping=config.depth_mapping):
-    print('Column cleanup')
+    print('####Column cleanup#####')
     data=data.astype(str)
     for value in mapping.values():
         if value in data.columns:
@@ -218,7 +218,7 @@ def depth_cleanup(data,hole_id_formats=[]):
 
 
 def drop_no_data(data):
-    print('Drop no data columns')
+    print('## Drop no data columns ##')
     dropped_cols=[]
     for col in data.columns:
         try:
