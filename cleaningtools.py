@@ -149,7 +149,7 @@ carrot clean up just loops through the mappings
 def carrot_cleanup(data):
     carrots=['>','<']
     for col in data.columns:
-        print(col)
+        #print(col)
         data[col]=data[col].astype(str).str.strip()
         more_index=data[col][data[col].str.startswith(carrots[0])].index
         less_index=data[col][data[col].str.startswith(carrots[-1])].index

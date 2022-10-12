@@ -43,7 +43,6 @@ def main(argv):
     for map in config.mappings:
         data=ct.column_cleanup(data,mapping=map)
 
-    #assays=ct.pull_hole_ids(assays,id_formats=config.hole_id_formats)
     data=ct.drop_no_data(data)
     data=ct.clean_column_names(data)
     data=ct.depth_cleanup(data)
