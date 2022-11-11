@@ -3,7 +3,8 @@
 verbose=True
 
 dir='/Users/sebastiancoombs/Library/CloudStorage/GoogleDrive-sebastianbcoombs@gmail.com/Shared drives/AMC Projects/_AZ_Kay/_Master Databases/'
-output_dir='test_data/'
+output_dir=dir
+output_dir_test='/test_data/'
 backup_dir='backup_data/'
 sorters=['hole','ft']
 na_threshold=5

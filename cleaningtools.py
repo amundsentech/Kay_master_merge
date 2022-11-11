@@ -39,15 +39,35 @@ import curate_config as config
 def clean_column_names(data):
     try:
         columns=[str(c) for c in data.columns]
-        data.columns=[c.replace(' ','_').strip().lower() for c in columns]
-        data.columns=[c.replace('__','_').lower() for c in data.columns]
+        data.columns=[c.replace(' ','_').lower() for c in columns]
+        data.columns=[c.replace('__','_') for c in data.columns]
         data.columns=[c.replace('sampleid','sample_id').lower() for c in data.columns]
         data.columns=[c.replace('holeid','hole_id').lower() for c in data.columns]
 
     except:
-        print('error in cleaning the collumn names')
+        print('error in cleaning the column names')
     return data
 
+def merge_duplicate_columns(df, method="unique", sep=""):
+    duplicated =  df.columns[df.columns.duplicated()].unique()
+    try:
+        if method == "join":
+            for d in duplicated:
+                df[d] = df.pop(d).fillna("").astype(str).apply(sep.join, axis=1)
+                
+        elif method == "unique":
+            for d in duplicated:
+                df[d] = df.pop(d).fillna("").astype(str).apply(lambda x: sep.join(x.unique()),axis=1) 
+                        
+        elif method == "sum":
+            for d in duplicated:
+                df[d] = df.pop(d).sum(axis=1)
+    
+    except Exception as e:
+        print('error merging duplicate columns')
+        print(e)
+
+    return df
 
 def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole_id','from_ft','to_ft','from_m','to_m','depth_ft','depth_m','depth','depthfrom','depthto']):
     new_order=col_order.copy()
@@ -134,7 +154,7 @@ def sort_data(data,sorters=['hole','ft'],verbose=False):
     if verbose:
         print(f'using {sort_by} for sorting the data')
     try:
-        data=data.sort_values(sort_by,axis=0,ascending=False).reset_index(drop=True)
+        data=data.sort_values(sort_by,axis=0,ascending=True).reset_index(drop=True)
     except Exception as e:
         print('Error in sorting')
         print(e)

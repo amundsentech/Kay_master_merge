@@ -21,7 +21,6 @@ def main(argv):
             elif opt in ("-i", "--input_dir"):
                 dir = arg
                 print (f'Input file location is {arg} ',)
-                
                 output_dir=dir
             elif opt in ("-o", "--output_file"):
                 output_dir= arg
@@ -59,60 +58,30 @@ def main(argv):
             # print('-----------------------------------')
             # print('Cleaning',file)
             try:
+                if verbose:
+                    print(file)
                 data=pd.read_csv(dir+file,low_memory=False)
                 data=ct.drop_bad_columns(data,verbose=verbose)
                 data=ct.clean_column_names(data)
+                data=ct.merge_duplicate_columns(data)
                 data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose)
                 data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
                 data=ct.sort_data(data)
-                data.to_csv(output_dir+filename+'.csv',index=False)
+                output=output_dir+filename+'.csv'
+                print('output location:')
+
+                print(output)
+                data.to_csv(output,index=False)
 
 
             except Exception as e:
+                print('________')
+                print('did not write file')
+
                 print(file)
                 print(e)
                 continue
-
-
     print('------------------------------------------------------------------------------')
-    print('################ MERGE SAMPLES AND DATA #############')
-    ## merge the cleaned up data
-
-    sample_files=[]
-    data_files=[]
-    for file in os.listdir(dir):
-        if 'sample' in file:
-            print(file)
-            sample_files.append(file)
-
-    for d_file in os.listdir(dir):
-        if d_file not in sample_files:
-            d_name=d_file.split(' ')
-            for s_file in sample_files:
-                s_name=s_file.split(' ')
-                if s_name[:2]==d_name[:2]:
-                    if'merge'not in(d_name):
-                        data_files.append(d_name)
-                        basename=" ".join(s_name[:2])
-                        try:
-                            d_data=pd.read_csv(dir+d_file,low_memory=False)
-                            s_data=pd.read_csv(dir+s_file,low_memory=False)
-                        except Exception as e:
-                            print(e)
-                            continue
-
-                        d_col=d_data.filter(like='sample').columns[0]
-                        s_col=s_data.filter(like='sample').columns[0]
-                        try:
-                            data=pd.merge(s_data,d_data,left_on=s_col,right_on=d_col,how='outer',suffixes=['_'+s_name[2],'_'+d_name[2]] )
-                            data=ct.sort_data(data,verbose=True)
-                        except Exception as e:
-                            print(e)
-                        if verbose:
-                            print(f'Merging {" ".join(s_name)} samples with {" ".join(d_name)} data')
-                            print(f'Using column: {s_col} in the sample sheet')
-                            print(f'Using column: {d_col} in the data sheet')
-                        data.to_csv(f'{output_dir}{basename} master.csv',index=False)
     print('FINISHED CURATION')
 
 if __name__ == "__main__":
