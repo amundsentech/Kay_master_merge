@@ -10,6 +10,7 @@ import datetime
 
 def main(argv):
     xrf_file=[]
+    verbose=config.verbose
     try:
         opts, args = getopt.getopt(argv,"ri:o:v:",["input_file=","output_file="])
         for opt, arg in opts:
@@ -25,8 +26,8 @@ def main(argv):
             elif opt in ("-o", "--output_file"):
                 output_file = arg
                 print ('Output file is ', output_file)
-            elif opt in ("-v", "--output_file"):
-                verbose=arg
+            elif opt in ("-v", "--verbose"):
+                verbose=True
                 print ('Verbose= ', verbose)
 
     except getopt.GetoptError as e:

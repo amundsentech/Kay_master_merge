@@ -10,6 +10,7 @@ import datetime
 
 def main(argv):
     dir=[]
+    verbose=config.verbose
     try:
         opts, args = getopt.getopt(argv,"ri:o:v:",["input_file=","output_file=",'verbose='])
         for opt, arg in opts:
