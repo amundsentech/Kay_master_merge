@@ -5,8 +5,8 @@ from ipaddress import collapse_addresses
 sample_id_formats= ["(\d{2}\-\d{3})","(\d{2}\-\d{3}[a-zA-Z]{1})"]
 hole_id_formats=['([a-zA-Z]{2}\-{1}\d{2}\-{1}\d{2})','([a-zA-Z]{2}\-{1}\d{2}\-{1}\d{2}[a-zA-Z]{1})']
 collars='/_Drilling/collar master.csv'
-holes='/_Lab/XRF/_XRF Hole Masters/'
-raw='/_Lab/XRF/_Daily Master/_XLSX/'
+raw='/_Lab/XRF/_XLSX/'
+verbose=False
 
 depth_mapping={
     'DepthFrom':'start_depth',
