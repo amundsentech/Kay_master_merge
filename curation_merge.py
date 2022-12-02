@@ -52,8 +52,8 @@ def main(argv):
         if 'sample' in file:
             print(file)
             sample_files.append(file)
-    files=[f for f in os.listdir(dir) if file.endswith('.csv')]
-    files=[f for f in files if 'merged' not in file]
+    files=[f for f in os.listdir(dir) if f.endswith('.csv')]
+    files=[f for f in files if 'merged' not in f]
     for d_file in files:
         if d_file not in sample_files:
             d_name=d_file.split(' ')
@@ -78,12 +78,13 @@ def main(argv):
                     s_col=s_data.filter(like='sample').columns[0]
                     try:
                         #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
-                        data=pd.merge(s_data,d_data,
+                        data=pd.merge(  
+                                        s_data.drop_duplicates(subset=[s_col],keep='first'),
+                                        d_data.drop_duplicates(subset=[d_col],keep='first'),
                         left_on=s_col,
                         right_on=d_col,
                         how='outer',
                         suffixes=['_'+s_name[2],'_'+d_name[2]],
-                        validate='many_to_many' 
                         )
                         data=ct.sort_data(data,verbose=True)
                     except Exception as e:
