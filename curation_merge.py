@@ -83,7 +83,7 @@ def main(argv):
                                         d_data.drop_duplicates(subset=[d_col],keep='first'),
                         left_on=s_col,
                         right_on=d_col,
-                        how='outer',
+                        how='left',
                         suffixes=['_'+s_name[2],'_'+d_name[2]],
                         )
                         data=ct.sort_data(data,verbose=True)
@@ -95,7 +95,7 @@ def main(argv):
                         print(f'Merging {" ".join(s_name)} samples with {" ".join(d_name)} data')
                         print(f'Using column: {s_col} in the sample sheet')
                         print(f'Using column: {d_col} in the data sheet')
-                    output=f'{output_dir}{basename} merged master.csv'
+                    output=f'{output_dir}{basename}_merged.csv'
                     print('output location:')
                     print(output)
                     try:

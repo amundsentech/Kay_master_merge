@@ -1,0 +1,629 @@
+geologist,unnamed:_2,unnamed:_3,unnamed:_4,file_location
+QAQC Materials,,Au g/t,Cu %,KM-20-01.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-01.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-01.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-02.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-02.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-02.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-03.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-03.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-03.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-03.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-03.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-20-03.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-03.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-20-03.xlsx_Legend
+if,isoclinal folds,Au g/t,Cu %,KM-20-03A.xlsx_Legend
+kf,kink folds,0.542,3.8,KM-20-03A.xlsx_Legend
+md,mafic dike,5.38,0.78,KM-20-03A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-04.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-04.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-04.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-05.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-05.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-05.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-06.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-06.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-06.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-07.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-07.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-07.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-09.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-09.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-09.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-10.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-10.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-10.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-10A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-10A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-10A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-10B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-10B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-10B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-10C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-10C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-10C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-11.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-11.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-11.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-12.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-12.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-12.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-13.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-13.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-13.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-14.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-14.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-14.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-14A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-14A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-14A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-15.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-15.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-15.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-20-16.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-20-16.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-20-16.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-17.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-17.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-17.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-18.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-18.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-18.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-18.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-18.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-18A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-18A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-18A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-18A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-18A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-19.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-19.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-19.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-19.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-19.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-20.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-20.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-20.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-20.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-20.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-21.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-21.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-21.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-21.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-21.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-21A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-21A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-21A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-21A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-21A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-22.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-22.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-22.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-22.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-22.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-22A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-22A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-22A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-22A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-22A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-23.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-23.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-23.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-23.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-23.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-24.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-24.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-24.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-24.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-24.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-25.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-25.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-25.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-25.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-25.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-25A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-25A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-25A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-25A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-25A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-25B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-25B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-25B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-25B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-25B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-26.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-26.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-26.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-26.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-26.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-27.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-27.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-27.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-27.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-27.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-27A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-27A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-27A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-27A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-27A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-27B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-27B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-27B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-27B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-27B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-28.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-28.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-28.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-28.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-28.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-29.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-29.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-29.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-29.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-29.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-30.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-30.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-30.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-30.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-30.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-31.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-31.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-31.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-31.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-31.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-32.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-32.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-32.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-32.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-32.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-33.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-33.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-33.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-33.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-33.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-34.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-34.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-34.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-34.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-34.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-35.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-35.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-35.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-35.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-35.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-36.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-36.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-36.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-36.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-36.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-37.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-37.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-37.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-37.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-37.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-38.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-38.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-38.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-38.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-38.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-39.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-39.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-39.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-39.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-39.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-40.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-40.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-40.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-40.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-40.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-41.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-41.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-41.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-41.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-41.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-42.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-42.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-42.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-42.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-42.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-42A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-42A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-42A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-42A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-42A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-42B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-42B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-42B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-42B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-42B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-42C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-42C.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-42C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-42C.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-42C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-43.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-43.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-43.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-43.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-43.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-44.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-44.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-44.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-44.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-44.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-45.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-45.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-45.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-45.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-45.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-46.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-46.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-46.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-46.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-46.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-47.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-47.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-47.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-47.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-47.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-48.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-48.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-48.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-48.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-48.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-48A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-48A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-48A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-48A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-48A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-49.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-49.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-49.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-49.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-49.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-50.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-50.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-50.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-50.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-50.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-51.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-51.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-51.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-51.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-51.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-51A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-51A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-51A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-51A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-51A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-51B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-51B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-51B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-51B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-51B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-52.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-52.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-52.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-52.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-52.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-52A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-52A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-52A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-52A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-52A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-53.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-53.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-53.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-53.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-53.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-54.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-54.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-54.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-54.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-54.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-55.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-55.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-55.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-55.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-55.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-56.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-56.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-56.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-56.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-56.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-57.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-57.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-57.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-57.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-57.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-57A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-57A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-57A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-57A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-57A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-58.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-58.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-58.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-58.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-58.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-58A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-58A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-58A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-58A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-58A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-58B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-58B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-58B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-58B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-58B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-21-59.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-21-59.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-21-59.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-21-59.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-21-59.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-57B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-57B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-57B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-57B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-57B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-57C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-57C.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-57C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-57C.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-57C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-59A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-59A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-59A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-59A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-59A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-60.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-60.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-60.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-60.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-60.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-61.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-61.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-61.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-61.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-61.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-62.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-62.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-62.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-62.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-62.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-62A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-62A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-62A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-62A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-62A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-62B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-62B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-62B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-62B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-62B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-62C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-62C.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-62C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-62C.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-62C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-63.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-63.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-63.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-63.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-63.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-63A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-63A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-63A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-63A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-63A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-63B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-63B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-63B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-63B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-63B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-63C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-63C.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-63C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-63C.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-63C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-63D.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-63D.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-63D.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-63D.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-63D.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-64.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-64.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-64.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-64.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-64.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-65.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-65.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-65.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-65.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-65.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-66.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-66.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-66.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-66.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-66.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-67.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-67.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-67.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-67.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-67.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-68.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-68.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-68.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-68.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-68.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-69.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-69.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-69.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-69.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-69.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-70.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-70.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-70.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-70.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-70.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-71.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-71.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-71.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-71.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-71.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-71A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-71A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-71A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-71A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-71A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-72.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-72.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-72.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-72.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-72.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-73.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-73.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-73.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-73.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-73.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-74.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-74.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-74.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-74.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-74.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-75.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-75.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-75.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-75.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-75.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-76.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-76.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-76.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-76.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-76.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-77.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-77.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-77.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-77.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-77.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-78.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-78.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-78.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-78.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-78.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-79.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-79.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-79.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-79.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-79.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-80.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-80.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-80.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-80.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-80.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-81.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-81.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-81.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-81.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-81.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-81A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-81A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-81A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-81A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-81A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-81B.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-81B.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-81B.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-81B.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-81B.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-81C.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-81C.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-81C.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-81C.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-81C.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-82.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-82.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-82.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-82.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-82.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-83.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-83.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-83.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-83.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-83.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-84.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-84.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-84.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-84.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-84.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-85.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-85.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-85.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-85.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-85.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-86.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-86.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-86.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-86.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-86.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-86A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-86A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-86A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-86A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-86A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-87.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-87.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-87.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-87.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-87.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-88.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-88.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-88.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-88.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-88.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-89.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-89.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-89.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-89.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-89.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-90.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-90.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-90.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-90.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-90.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-91.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-91.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-91.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-91.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-91.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-92.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-92.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-92.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-92.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-92.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-93.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-93.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-93.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-93.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-93.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-93X.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-93X.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-93X.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-93X.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-93X.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-94.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-94.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-94.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-94.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-94.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-94A.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-94A.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-94A.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-94A.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-94A.xlsx_Legend
+QAQC Materials,,Au g/t,Cu %,KM-22-95.xlsx_Legend
+STD CDN-ME-1410,"Multi-element std, lo Au",0.542,3.8,KM-22-95.xlsx_Legend
+STD CDN-ME-1404,"Multi-element std, lo Au",0.897,0.48,KM-22-95.xlsx_Legend
+STD CDN-ME-1902,"Multi-element std, hi Au",5.38,0.78,KM-22-95.xlsx_Legend
+STD CDN-ME-1707,"Multi-element std, lo AU",2.02,2.72,KM-22-95.xlsx_Legend

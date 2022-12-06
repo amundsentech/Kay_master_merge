@@ -141,7 +141,7 @@ def drop_bad_columns(data,verbose=False):
         print(f'Dropped {dropped_cols}: no data')
     return data
 
-def sort_data(data,sorters=['hole','ft'],verbose=False):
+def sort_data(data,sorters=['hole','ft','sample'],verbose=False):
     sort_by=[]
     for c in sorters:
         try:
