@@ -73,9 +73,13 @@ def main(argv):
                     except Exception as e:
                         print(e)
                         continue
-
+r
                     d_col=d_data.filter(like='sample').columns[0]
                     s_col=s_data.filter(like='sample').columns[0]
+
+                    if 'terraspec' in s_name:
+                        s_col=s_data.filter(like='file').columns[0]
+
                     try:
                         #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
                         data=pd.merge(  
