@@ -7,7 +7,7 @@ output_dir=dir
 output_dir_test='/test_data/'
 backup_dir='backup_data/'
 sorters=['hole','ft']
-na_threshold=5
+na_threshold=10
 
 targets=['ft','hole']
 

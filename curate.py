@@ -64,8 +64,9 @@ def main(argv):
                 data=ct.drop_bad_columns(data,verbose=verbose)
                 data=ct.clean_column_names(data)
                 data=ct.merge_duplicate_columns(data)
-                data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose)
-                data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
+                data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose) 
+                ## this is a legacy line needed before the upgrade the new merge script performs this
+                #data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
                 data=ct.sort_data(data)
                 output=output_dir+filename+'.csv'
                 print('output location:')
