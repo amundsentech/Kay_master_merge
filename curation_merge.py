@@ -48,7 +48,8 @@ def main(argv):
 
     sample_files=[]
     data_files=[]
-    for file in os.listdir(dir):
+    masters=[f for f in os.listdir(dir) if 'shift' not in f]
+    for file in masters:
         if file.endswith('.csv'):
             if 'sample' in file:
                 

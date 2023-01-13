@@ -7,6 +7,7 @@ import curate_config as config
 from tqdm.auto import tqdm
 import numpy as np
 import datetime
+import glob
 
 def main(argv):
     dir=[]
@@ -21,7 +22,7 @@ def main(argv):
             elif opt in ("-i", "--input_dir"):
                 dir = arg
                 print (f'Input file location is {arg} ',)
-                output_dir=dir
+                output_dir=dir+'scrap'
             elif opt in ("-o", "--output_file"):
                 output_dir= arg
                 print ('Output directory is ', output_dir)
@@ -39,6 +40,7 @@ def main(argv):
         output_dir=config.dir
 
     print ('Input file directory is ', dir)
+    files=glob.glob(scrape_path, recursive = True)
     print ('Output file directory is ', output_dir)
 
     print('------------------------------------------------------------------------------')
@@ -64,7 +66,10 @@ def main(argv):
                 data=ct.drop_bad_columns(data,verbose=verbose)
                 data=ct.clean_column_names(data)
                 data=ct.merge_duplicate_columns(data)
+                data=ct.drop_work_order(data,verbose=verbose)
+                data=ct.round_depths(data,verbose=verbose)
                 data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose) 
+                
                 ## this is a legacy line needed before the upgrade the new merge script performs this
                 #data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
                 data=ct.sort_data(data)

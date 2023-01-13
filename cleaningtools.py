@@ -5,7 +5,7 @@ import math
 import importlib
 
 
-pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np','openpyxl':'openpyxl'}
+pkgs = {'pandas': 'pd', 'tqdm': 'tqdm','numpy':'np','openpyxl':'openpyxl','xlwings':'xlwings'}
 def check_packages():
     for p in pkgs:
         s = pkgs[p]
@@ -43,6 +43,12 @@ def clean_column_names(data):
         data.columns=[c.replace('__','_') for c in data.columns]
         data.columns=[c.replace('sampleid','sample_id').lower() for c in data.columns]
         data.columns=[c.replace('holeid','hole_id').lower() for c in data.columns]
+
+        data.rename(columns={'depth':'depth_ft'},inplace=True)
+
+        data=data.groupby(level=0,axis=1).sum(numeric_only=False)
+
+
 
     except:
         print('error in cleaning the column names')
@@ -121,6 +127,14 @@ def drop_bad_rows(data,na_threshold=2,targets=['ft','hole'],verbose=False):
         print(e)
     return data
 
+def drop_work_order(data,verbose=False):
+    if verbose:
+        print('## Drop work_order column ##')
+    work=data.filter(like='work_order').columns
+    if len(work)>0:
+        data = data.drop(work,axis=1)
+    return data
+
 def drop_bad_columns(data,verbose=False):
     if verbose:
         print('## Drop no data columns ##')
@@ -161,7 +175,26 @@ def sort_data(data,sorters=['hole','ft','sample'],verbose=False):
     return data
        
 def get_base_path(path,start_point='_AZ_Kay'):
+
     path_list=path.split('/')
     b=path_list.index(start_point)
     base_path='/'.join(path_list[:b+1])
     return base_path
+
+def round_depths(data,targets=['_ft','_m','depth'],verbose=False):
+    if verbose:
+        print('rounding depths')
+    for t in targets:
+        cols=data.filter(like= t)
+        for col in cols:
+            try:
+                ser=pd.to_numeric(data[col],errors='coerce')
+                ser=ser.round(1)
+                data.loc[ser[ser.notna()==True].index,col]=ser[ser.notna()==True]
+                
+
+            except:
+                pass
+
+    return data
+
