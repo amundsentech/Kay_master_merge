@@ -22,7 +22,7 @@ def main(argv):
             elif opt in ("-i", "--input_dir"):
                 dir = arg
                 print (f'Input file location is {arg} ',)
-                output_dir=dir+'scrap'
+                output_dir=dir
             elif opt in ("-o", "--output_file"):
                 output_dir= arg
                 print ('Output directory is ', output_dir)
