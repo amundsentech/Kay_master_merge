@@ -40,7 +40,6 @@ def main(argv):
         output_dir=config.dir
 
     print ('Input file directory is ', dir)
-    files=glob.glob(scrape_path, recursive = True)
     print ('Output file directory is ', output_dir)
 
     print('------------------------------------------------------------------------------')
