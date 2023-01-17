@@ -68,20 +68,22 @@ def main(argv):
                 data=ct.drop_work_order(data,verbose=verbose)
                 data=ct.round_depths(data,verbose=verbose)
                 data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose) 
+                data=ct.drop_hash(data)
                 
                 ## this is a legacy line needed before the upgrade the new merge script performs this
                 #data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
                 data=ct.sort_data(data)
                 output=output_dir+filename+'.csv'
                 print('output location:')
-
                 print(output)
+                print('------------------')
                 data.to_csv(output,index=False)
 
 
             except Exception as e:
-                print('________')
+                print('-------------------')
                 print('did not write file')
+                print('-------------------')
 
                 print(file)
                 print(e)

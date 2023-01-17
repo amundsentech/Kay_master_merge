@@ -117,7 +117,7 @@ def main(argv):
                                         d_data.drop_duplicates(subset=[d_col],keep='first'),
                         left_on=s_col,
                         right_on=d_col,
-                        how='left',
+                        how='inner',
                         suffixes=['_'+s_name[2],'_'+d_name[2]],
                         )
                         data=ct.sort_data(data,verbose=True)

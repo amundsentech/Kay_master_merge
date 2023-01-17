@@ -56,6 +56,8 @@ def clean_column_names(data):
 
 def merge_duplicate_columns(df, method="unique", sep=""):
     duplicated =  df.columns[df.columns.duplicated()].unique()
+    print('######duplicated_columns#####')
+    print(duplicated)
     try:
         if method == "join":
             for d in duplicated:
@@ -181,20 +183,42 @@ def get_base_path(path,start_point='_AZ_Kay'):
     base_path='/'.join(path_list[:b+1])
     return base_path
 
-def round_depths(data,targets=['_ft','_m','depth'],verbose=False):
+def round_depths(data,targets=['_m','recovery','depth'],verbose=False):
     if verbose:
-        print('rounding depths')
+        print('###rounding depths#####')
     for t in targets:
-        cols=data.filter(like= t)
-        for col in cols:
-            try:
-                ser=pd.to_numeric(data[col],errors='coerce')
-                ser=ser.round(1)
-                data.loc[ser[ser.notna()==True].index,col]=ser[ser.notna()==True]
-                
+        cols=list(data.filter(like= t).columns)
+        if len(cols)>0:
+            print("rounding:",cols)
+            for col in cols:
+                try:
+                    ser=pd.to_numeric(data[col],errors='coerce',)
+                    ser=ser.astype(float)
 
-            except:
-                pass
+                    ser=ser.round(1)
+                    ser=ser.map('{:.1f}'.format)
+                    data.loc[ser[ser.notna()==True].index,col]=ser[ser.notna()==True]
+                except:
+                    pass
 
     return data
 
+def drop_hash(data, verbose=False):
+    try:
+        drop=(data[data['depth_m']=='#VALUE!']).index
+        data=data.drop(drop,axis=0)
+    except Exception as e :
+        if verbose:
+            print (e)
+        pass
+
+    try:
+        drop=(data[(data['recovery_%']=='#DIV/0!')]).index
+        data=data.drop(drop,axis=0)
+
+    except Exception as e :
+        if verbose:
+            print (e)
+        pass
+
+    return data
