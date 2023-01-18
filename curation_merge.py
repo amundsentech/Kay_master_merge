@@ -71,19 +71,20 @@ def main(argv):
             print(merge_files)
             base=merge_files[0].split(' ')
             basename=' '.join(base[:2])
+            
             print(basename)
 
 
             if len(merge_files)<=2:
-                s_file=merge_files[-1]
-                s_name=merge_files[-1].split('.')[0]
+                s_file=[f for f in merge_files if 'samples' in f][0]
+                s_name=s_file.split('.')[0]
                 s_data=pd.read_csv(dir+s_file,low_memory=False)
                 print(s_data.columns)
 
 
 
-                d_file=merge_files[0]
-                d_name=merge_files[0].split('.')[0]
+                d_file=[f for f in merge_files if 'samples' not in f][0]
+                d_name=d_file.split('.')[0]
                 d_data=pd.read_csv(dir+d_file,low_memory=False)
                 d_col=d_data.filter(like='sample').columns[0]
                 d_sub=d_name.split(' ')[2]
@@ -116,18 +117,18 @@ def main(argv):
             
             if len(merge_files)>2:
 
-                s_file=merge_files[-1]
-                s_name=merge_files[-1].split('.')[0]
+                s_file=[f for f in merge_files if k not in f][0]
+                s_name=s_file.split('.')[0]
                 s_data=pd.read_csv(dir+s_file,low_memory=False)
                 s_col=s_data.filter(like='sample').columns[0]
 
-                d_file=merge_files[0]
-                d_name=merge_files[0].split('.')[0]
+                d_file=[f for f in merge_files if (k in f) and ('sample' in f )][0]
+                d_name=d_file.split('.')[0]
                 d_data=pd.read_csv(dir+d_file,low_memory=False)
                 d_col=d_data.filter(like='sample').columns[0]
 
-                d_file2=merge_files[1]
-                d_name2=merge_files[1].split('.')[0]
+                d_file2=[f for f in merge_files if (k in f) and ('sample' not in f )][0]
+                d_name2=d_file2.split('.')[0]
                 d_data2=pd.read_csv(dir+d_file2,low_memory=False)
                 d_col2=d_data2.filter(like='sample').columns[0]
 
