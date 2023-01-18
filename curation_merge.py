@@ -72,7 +72,7 @@ def main(argv):
             basename=' '.join(base[:2])
             print(basename)
 
-            merged=pd.DataFrame()
+
             if len(merge_files)<=2:
                 s_file=merge_files[-1]
                 s_name=merge_files[-1].split('.')[0]
@@ -89,7 +89,7 @@ def main(argv):
                 if 'terraspec' in d_file:
                     s_col=s_data.filter(like='file_name').columns[0]
 
-                if 'geochemical' in merged:
+                if 'geochemical' in d_file:
                     s_sub=s_name.split(' ')[1]
                 else:
                     s_sub=s_name.split(' ')[2]
