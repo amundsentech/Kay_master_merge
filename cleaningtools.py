@@ -87,7 +87,7 @@ def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole
     #look in the data for the columns we want
     #look in the data for the columns we want
 
-    u_cols=set([c for c in new_order if c in data.filter(like=c).columns])
+    u_cols=set([c for c in new_order if c in data.columns])
     # set alphabetizies them so we need to reorder basded
     first_cols=[c for c in new_order if c in u_cols]
     last_cols= [c for c in data.columns if c not in first_cols]
