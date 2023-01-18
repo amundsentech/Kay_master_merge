@@ -7,6 +7,7 @@ import curate_config as config
 from tqdm.auto import tqdm
 import numpy as np
 import datetime
+import traceback
 
 def main(argv):
     dir=[]
@@ -169,6 +170,7 @@ def main(argv):
         except Exception as e:
             print('___________')
             print('MERGE FAIL')
+            traceback.print_exc(e)
             print(e)
         try:
             data.to_csv(output,index=False)
