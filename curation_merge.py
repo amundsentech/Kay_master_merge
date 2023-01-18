@@ -189,10 +189,10 @@ def main(argv):
                                 )
             
 
-            sam_col=data_out.filter(like='sample').columns[0]
-            data_out_c=data_out.set_index(sam_col)
-            sam_col=data.filter(like='sample').columns[0]
-            data_c=data.set_index(sam_col)
+            # sam_col=data_out.filter(like='sample').columns[0]
+            data_out_c=data_out.set_index(s_col)
+            # sam_col=data.filter(like='sample').columns[0]
+            data_c=data.set_index(s_col)
          
             # print(data_out_c.head())
             # print(data_c.head())
