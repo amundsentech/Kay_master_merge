@@ -190,9 +190,9 @@ def main(argv):
             
 
             # sam_col=data_out.filter(like='sample').columns[0]
-            data_out_c=data_out.set_index(s_col)
+            data_out_c=data_out.set_index(s_col).sort_index()
             # sam_col=data.filter(like='sample').columns[0]
-            data_c=data.set_index(s_col)
+            data_c=data.set_index(s_col).sort_index()
          
             # print(data_out_c.head())
             # print(data_c.head())
