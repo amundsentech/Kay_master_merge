@@ -67,9 +67,9 @@ def main(argv):
             if 'geochemical' in globed or 'hyp-pkg' in globed:
                 merge_files+=all_samples
             print('---------------------------------------------------')
-            merg_files=sorted(merge_files)
+            # merge_files=sorted(merge_files)
             print(merge_files)
-            base=merg_files[0].split(' ')
+            base=merge_files[0].split(' ')
             basename=' '.join(base[:2])
             print(basename)
 
@@ -78,6 +78,7 @@ def main(argv):
                 s_file=merge_files[-1]
                 s_name=merge_files[-1].split('.')[0]
                 s_data=pd.read_csv(dir+s_file,low_memory=False)
+                print(s_data.columns)
                 s_col=s_data.filter(like='sample').columns[0]
 
 
