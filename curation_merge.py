@@ -201,6 +201,10 @@ def main(argv):
             print(len(lost_ids))
             print(lost_ids)
             lost_df=data_out_c.loc[lost_ids]
+            try:
+                lost_df=lost_df.drop('0')
+            except:
+                pass
             print(data_c.shape)
             print(lost_df.shape)
             print(data_out_c.shape)
