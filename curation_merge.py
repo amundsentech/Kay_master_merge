@@ -208,8 +208,8 @@ def main(argv):
         
             d_list.append(data)
             print('----------------------------')
-            output=f'{dir}{basename}_merged.csv'
-            lostoutput=f'{dir}logs/{basename}_merged lost entries.csv'
+            output=f'{dir}{basename}_combined.csv'
+            lostoutput=f'{dir}logs/{basename}_combined lost entries.csv'
 
             print('output location:')
             print(output)                
