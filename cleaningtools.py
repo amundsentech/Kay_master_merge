@@ -43,6 +43,7 @@ def clean_column_names(data):
         data.columns=[c.replace('__','_') for c in data.columns]
         data.columns=[c.replace('sampleid','sample_id').lower() for c in data.columns]
         data.columns=[c.replace('holeid','hole_id').lower() for c in data.columns]
+        data.columns=[c.replace('sample_id_description','sample_id').lower() for c in data.columns]
 
         data.rename(columns={'depth':'depth_ft'},inplace=True)
 
@@ -77,7 +78,7 @@ def merge_duplicate_columns(df, method="unique", sep=""):
 
     return df
 
-def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole_id','hole_id_samples','from_ft','to_ft','from_m','to_m','depth_ft','depth_m','depth','depthfrom','depthto']):
+def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','sample_id_description','hole_id','hole_id_samples','from_ft','to_ft','from_m','to_m','depth_ft','depth_m','depth','depthfrom','depthto']):
     new_order=col_order.copy()
     for c in col_order:
         i=new_order.index(c)
