@@ -50,6 +50,7 @@ def main(argv):
     files=[f for f in files if 'drill' in f]
     files=[f for f in files if f.endswith('.csv')]
     files=[f for f in files if 'merged' not in f]
+    files=[f for f in files if 'combined' not in f]
     files=[f for f in files if 'shift' not in f]
 
     samples=[f for f in files if 'samples' in f]
@@ -186,18 +187,23 @@ def main(argv):
                                 how='outer',
                                 suffixes=['_'+s_name,'_'+d_name2[2]],
                                 )
-            print('idex_name',data.columns[:5])
-            print('idex_name',data_out.columns[:5])
+            
 
-            data_out_c=data_out.set_index('sample_id')
-            data_c=data.set_index('sample_id')
+            sam_col=data_out.filter(like='sample').columns[0]
+            data_out_c=data_out.set_index(sam_col)
+            sam_col=data.filter(like='sample').columns[0]
+            data_c=data.set_index(sam_col)
          
             # print(data_out_c.head())
             # print(data_c.head())
             # print(data_out_c[(data_out_c.index.isin(data_c.index))==False])   
-            lost_ids=data_out_c[(data_out_c.index.isin(data_c.index))==False].index
+            lost_ids=data_out_c[data_out_c.index.isin(data_c.index)==False].index.dropna()
+            print(len(lost_ids))
+            print(lost_ids)
             lost_df=data_out_c.loc[lost_ids]
-
+            print(data_c.shape)
+            print(lost_df.shape)
+            print(data_out_c.shape)
 
             data=ct.merge_duplicate_columns(data)
             data=ct.sort_data(data)
@@ -214,12 +220,12 @@ def main(argv):
             print('output location:')
             print(output)                
             print('lost sample output location:')
-            print(f'lost {len(lost_df)} samples')
+            print(f'lost {lost_df.shape[0]} samples')
             print(lostoutput)                    
         except Exception as e:
             print('___________')
             print('MERGE FAIL')
-            # traceback.print_exc(e)
+            traceback.print_exc(e)
             print(e)
         try:
             data.to_csv(output,index=False)
