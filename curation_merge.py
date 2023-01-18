@@ -104,7 +104,10 @@ def main(argv):
                 print(f'Merging {s_name}  with {d_name} data')
                 print('using columns')
                 print(s_col,';',d_col)
-                #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
+                
+                s_data[s_col]=s_data[s_col].str.strip('').str.upper()
+                d_data[d_col]=d_data[d_col].str.strip('').str.upper()
+
                 data=pd.merge(  
                         s_data.drop_duplicates(subset=[s_col],keep='first'),
                         d_data.drop_duplicates(subset=[d_col],keep='first'),
@@ -136,6 +139,9 @@ def main(argv):
                 d_sub=d_name.split(' ')[2]
                 d_sub2=d_name2.split(' ')[2]
 
+                s_data[s_col]=s_data[s_col].str.strip('').str.upper()
+                d_data[d_col]=d_data[d_col].str.strip('').str.upper()
+                d_data2[d_col2]=d_data[d_col2].str.strip('').str.upper()
 
                 print(f'Merging {s_name} samples with {d_name} samples')
                 print('using columns')
