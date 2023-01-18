@@ -79,7 +79,7 @@ def main(argv):
                 s_name=merge_files[-1].split('.')[0]
                 s_data=pd.read_csv(dir+s_file,low_memory=False)
                 print(s_data.columns)
-                s_col=s_data.filter(like='sample').columns[0]
+
 
 
                 d_file=merge_files[0]
@@ -90,6 +90,8 @@ def main(argv):
                 
                 if 'terraspec' in d_file:
                     s_col=s_data.filter(like='file_').columns[0]
+                else: 
+                    s_col=s_data.filter(like='sample').columns[0]
 
                 if 'geochemical' in d_file:
                     s_sub=s_name.split(' ')[1]
