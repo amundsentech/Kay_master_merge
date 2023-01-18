@@ -119,8 +119,8 @@ def main(argv):
                 suffixes=['_'+s_sub,'_'+d_sub],
                 )                
                 data_out=pd.merge(  
-                        s_data,
-                        d_data,
+                        s_data.drop_duplicates(subset=[s_col],keep='last'),
+                        d_data.drop_duplicates(subset=[d_col],keep='last'),
                 left_on=s_col,
                 right_on=d_col,
                 how='outer',
@@ -180,8 +180,8 @@ def main(argv):
                                 suffixes=['_'+s_name,'_'+d_name2[2]],
                                 )
                 data_out=pd.merge(  
-                                data,
-                                d_data2,
+                                data.drop_duplicates(subset=[s_col],keep='last'),
+                                d_data2.drop_duplicates(subset=[d_col2],keep='last'),
                                 left_on=s_col,
                                 right_on=d_col,
                                 how='outer',
