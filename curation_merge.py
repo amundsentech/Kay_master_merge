@@ -45,102 +45,136 @@ def main(argv):
     print('------------------------------------------------------------------------------')
     print('################ MERGE SAMPLES AND DATA #############')
     ## merge the cleaned up data
-
-    sample_files=[]
-    data_files=[]
-    masters=[f for f in os.listdir(dir) if 'shift' not in f]
-    for file in masters:
-        if file.endswith('.csv'):
-            if 'sample' in file:
-                
-                sample_files.append(file)
-
-            filename=file.split(' ')[1]
-            if 'samples' == filename:
-                print('Found all sample list',file)
-                all_sample_file=file
-                all_samples_name=file.split(' ')
-                all_samples_suff=''.join(all_samples_name[1:-1])
-                print(all_samples_suff)
-                all_samples=pd.read_csv(dir+file,low_memory=False)
-                main_col='sample_id'
-                sample_files.remove(file)
-    print('sample_files:',sample_files)
-    files=[f for f in os.listdir(dir) if f.endswith('.csv')]
+    files= os.listdir(dir)
+    files=[f for f in files if 'drill' in f]
+    files=[f for f in files if f.endswith('.csv')]
     files=[f for f in files if 'merged' not in f]
-    for d_file in files:
-        merge=False
-        if d_file not in sample_files:
-            d_name=d_file.split(' ')[:-1]
-            if (d_name[:2]==['drill','geochemical']):
-                s_file=all_sample_file
-                merge=True
+    files=[f for f in files if 'shift' not in f]
 
-            for s_file in sample_files:
-                s_name=s_file.split(' ')[:-1]
-                if (s_name[:2]==d_name[:2]):
-                    merge=True
+    samples=[f for f in files if 'samples' in f]
+
+    keys=sorted([k.split(' ')[1] for k in samples]+['geochemical'])
+    all_samples=[k for k in samples if k.split(' ')[1] =='samples']
+    d_list=[]
+    keys.remove('samples')
+    print(keys,all_samples)
+
+    for k in keys:
+        try:
+            merge_files=[f for f in files if k in f ]
+            globed=''.join(merge_files)
+            if 'geochemical' in globed or 'hyp-pkg' in globed:
+                merge_files+=all_samples
+            print('---------------------------------------------------')
+            merg_files=sorted(merge_files)
+            print(merge_files)
+            base=merg_files[0].split(' ')
+            basename=' '.join(base[:2])
+            print(basename)
+
+            merged=pd.DataFrame()
+            if len(merge_files)<=2:
+                s_file=merge_files[-1]
+                s_name=merge_files[-1].split('.')[0]
+                s_data=pd.read_csv(dir+s_file,low_memory=False)
+                s_col=s_data.filter(like='sample').columns[0]
+
+
+                d_file=merge_files[0]
+                d_name=merge_files[0].split('.')[0]
+                d_data=pd.read_csv(dir+d_file,low_memory=False)
+                d_col=d_data.filter(like='sample').columns[0]
+                d_sub=d_name.split(' ')[2]
                 
-                if merge==True:
-                    data_files.append(d_name)
-                    basename=" ".join(d_name[:2])
+                if 'terraspec' in d_file:
+                    s_col=s_data.filter(like='file_name').columns[0]
+
+                if 'geochemical' in merged:
+                    s_sub=s_name.split(' ')[1]
+                else:
+                    s_sub=s_name.split(' ')[2]
+
+
                 
-                    try:
-                        d_data=pd.read_csv(dir+d_file,low_memory=False)
-                        s_data=pd.read_csv(dir+s_file,low_memory=False)
-                    except Exception as e:
-                        print(e)
-                        continue
+                print(f'Merging {s_name}  with {d_name} data')
+                print('using columns')
+                print(s_col,';',d_col)
+                #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
+                data=pd.merge(  
+                        s_data.drop_duplicates(subset=[s_col],keep='first'),
+                        d_data.drop_duplicates(subset=[d_col],keep='first'),
+                left_on=s_col,
+                right_on=d_col,
+                how='inner',
+                suffixes=['_'+s_sub,'_'+d_sub],
+                )
+            
+            
+            if len(merge_files)>2:
 
-                    d_col=d_data.filter(like='sample').columns[0]
-                    s_col=s_data.filter(like='sample').columns[0]
-                    
-                    if 'terraspec' in d_file:
-                        s_col=s_data.filter(like='file_name').columns[0]
+                s_file=merge_files[-1]
+                s_name=merge_files[-1].split('.')[0]
+                s_data=pd.read_csv(dir+s_file,low_memory=False)
+                s_col=s_data.filter(like='sample').columns[0]
 
-                    else:
-                        ## merge the main sample list with the **_master sample list
-                        s_data=pd.merge(  
-                                        s_data.drop_duplicates(subset=[s_col],keep='first'),
-                                        all_samples.drop_duplicates(subset=[main_col],keep='first'),
-                        left_on=s_col,
-                        right_on=main_col,
-                        how='outer',
-                        suffixes=['_'+s_name[1],'_'+all_samples_suff],
-                        )
+                d_file=merge_files[0]
+                d_name=merge_files[0].split('.')[0]
+                d_data=pd.read_csv(dir+d_file,low_memory=False)
+                d_col=d_data.filter(like='sample').columns[0]
 
-                    try:
-                        print(s_name[2],d_name[2])
-                        #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
-                        data=pd.merge(  
-                                        s_data.drop_duplicates(subset=[s_col],keep='first'),
-                                        d_data.drop_duplicates(subset=[d_col],keep='first'),
-                        left_on=s_col,
-                        right_on=d_col,
-                        how='inner',
-                        suffixes=['_'+s_name[2],'_'+d_name[2]],
-                        )
-                        data=ct.sort_data(data,verbose=True)
-                    except Exception as e:
-                        print('___________')
-                        print('MERGE FAIL')
-                        print(e)
-                        if verbose:
-                            print(f'Merging {" ".join(s_name)} samples with {" ".join(d_name)} data')
-                            print(f'Using column: {s_col} in the sample sheet')
-                            print(f'Using column: {d_col} in the data sheet')
-                    if verbose:
-                        print(f'Merging {" ".join(s_name)} samples with {" ".join(d_name)} data')
-                        print(f'Using column: {s_col} in the sample sheet')
-                        print(f'Using column: {d_col} in the data sheet')
-                    output=f'{output_dir}{basename}_merged.csv'
-                    print('output location:')
-                    print(output)
-                    try:
-                        data.to_csv(output,index=False)
-                    except Exception as e:
-                        print(e)
-                    merge=False
+                d_file2=merge_files[1]
+                d_name2=merge_files[1].split('.')[0]
+                d_data2=pd.read_csv(dir+d_file2,low_memory=False)
+                d_col2=d_data2.filter(like='sample').columns[0]
+
+                s_sub=s_name.split(' ')[1]
+                d_sub=d_name.split(' ')[2]
+                d_sub2=d_name2.split(' ')[2]
+
+
+                print(f'Merging {s_name} samples with {d_name} samples')
+                print('using columns')
+                print(s_col,':',d_col)
+                #data=pd.concat([s_data.set_index(s_col),d_data.set_index(d_col)], axis=1, join='inner')
+                data=pd.merge(  
+                        s_data.drop_duplicates(subset=[s_col],keep='first'),
+                        d_data.drop_duplicates(subset=[d_col],keep='first'),
+                left_on=s_col,
+                right_on=d_col,
+                how='outer',
+                suffixes=['_'+s_sub,'_'+d_sub],
+                )
+                print(f'Merging {s_name} + {d_name} with {d_name} data')
+
+                data=pd.merge(  
+                                data.drop_duplicates(subset=[s_col],keep='first'),
+                                d_data2.drop_duplicates(subset=[d_col2],keep='first'),
+                                left_on=s_col,
+                                right_on=d_col,
+                                how='inner',
+                                suffixes=['_'+s_name,'_'+d_name2[2]],
+                                )
+            data=ct.merge_duplicate_columns(data)
+            data=ct.sort_data(data)
+            data=ct.reorder_columns(data,verbose=True)
+            data=ct.fix_depths(data)
+            data=ct.round_depths(data)
+
+
+            d_list.append(data)
+            print('----------------------------')
+            output=f'{dir}{basename}_merged.csv'
+            print('output location:')
+            print(output)                    
+        except Exception as e:
+            print('___________')
+            print('MERGE FAIL')
+            print(e)
+        try:
+            data.to_csv(output,index=False)
+        except Exception as e:
+            print(e)
+
     print('------------------------------------------------------------------------------')
     print('FINISHED MERGE')
 

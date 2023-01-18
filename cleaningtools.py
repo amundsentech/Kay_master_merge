@@ -86,7 +86,8 @@ def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole
             new_order.insert(i+1,new)
     #look in the data for the columns we want
     #look in the data for the columns we want
-    u_cols=set([c for c in new_order if c in data.columns])
+
+    u_cols=set([c for c in new_order if c in data.filter(like=c).columns])
     # set alphabetizies them so we need to reorder basded
     first_cols=[c for c in new_order if c in u_cols]
     last_cols= [c for c in data.columns if c not in first_cols]
@@ -183,7 +184,7 @@ def get_base_path(path,start_point='_AZ_Kay'):
     base_path='/'.join(path_list[:b+1])
     return base_path
 
-def round_depths(data,targets=['_m','recovery','depth'],verbose=False):
+def round_depths(data,targets=['_m','_ft','recovery','depth'],verbose=False):
     if verbose:
         print('###rounding depths#####')
     for t in targets:
@@ -221,4 +222,27 @@ def drop_hash(data, verbose=False):
             print (e)
         pass
 
+    return data
+
+def fix_depths(data,like=['_m','_ft'],verbose=True):
+    depths=[d for d in data.columns if d.lower().startswith('depth')]
+    print(depths)
+    depth_map={d:'_'.join(d.split('_')[:-1]) for d in depths if len(d.split('_'))>2 }
+    print (depth_map)
+    
+    data=data.rename(columns=depth_map)
+
+    for l in like:
+        depths=data.filter(like=l,)
+        cols=[c for c in depths.columns if c.endswith(l)]
+        cols=list(set(cols))
+
+        if verbose:
+            print('Filling', cols)
+        data[cols]=data[cols].replace(0,np.nan)
+        depths=data[cols].copy()
+
+        depths=depths.apply(lambda x: x.fillna(x.mean(skipna=True)),axis=1)
+        data[cols]=depths
+        # data.drop(data.columns.isduplicated(),axis=1)
     return data
