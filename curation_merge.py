@@ -183,7 +183,7 @@ def main(argv):
                                 data.drop_duplicates(subset=[s_col],keep='last'),
                                 d_data2.drop_duplicates(subset=[d_col2],keep='last'),
                                 left_on=s_col,
-                                right_on=d_col,
+                                right_on=d_col2,
                                 how='outer',
                                 suffixes=['_'+s_name,'_'+d_name2[2]],
                                 )
