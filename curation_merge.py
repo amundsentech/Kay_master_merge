@@ -105,15 +105,24 @@ def main(argv):
                 print('using columns')
                 print(s_col,';',d_col)
 
-                s_data[s_col]=s_data[s_col].str.strip('').str.upper()
-                d_data[d_col]=d_data[d_col].str.strip('').str.upper()
-
+       
+                s_idx=[c for c in s_data[s_col]]
+                d_idx=[c for c in d_data[d_col]]
+                idx=sorted(list(set(s_idx+d_idx)))
                 data=pd.merge(  
                         s_data.drop_duplicates(subset=[s_col],keep='first'),
                         d_data.drop_duplicates(subset=[d_col],keep='first'),
                 left_on=s_col,
                 right_on=d_col,
                 how='inner',
+                suffixes=['_'+s_sub,'_'+d_sub],
+                )                
+                data_out=pd.merge(  
+                        s_data.drop_duplicates(subset=[s_col],keep='first'),
+                        d_data.drop_duplicates(subset=[d_col],keep='first'),
+                left_on=s_col,
+                right_on=d_col,
+                how='outer',
                 suffixes=['_'+s_sub,'_'+d_sub],
                 )
             
@@ -139,10 +148,14 @@ def main(argv):
                 d_sub=d_name.split(' ')[2]
                 d_sub2=d_name2.split(' ')[2]
 
-                s_data[s_col]=s_data[s_col].str.strip('').str.upper()
-                d_data[d_col]=d_data[d_col].str.strip('').str.upper()
-                d_data2[d_col2]=d_data2[d_col2].str.strip('').str.upper()
+                # s_data[s_col]=s_data[s_col].str.strip('').str.upper()
+                # d_data[d_col]=d_data[d_col].str.strip('').str.upper()
+                # d_data2[d_col2]=d_data2[d_col2].str.strip('').str.upper()
 
+                s_idx=[c for c in s_data[s_col].values]
+                d_idx=[c for c in d_data[d_col].values]
+                d2_idx=[c for c in d_data2[d_col2].values]
+                idx=sorted(list(set(s_idx+d_idx +d2_idx)))
                 print(f'Merging {s_name} samples with {d_name} samples')
                 print('using columns')
                 print(s_col,':',d_col)
@@ -155,7 +168,7 @@ def main(argv):
                 how='outer',
                 suffixes=['_'+s_sub,'_'+d_sub],
                 )
-                print(f'Merging {s_name} + {d_name} with {d_name} data')
+                print(f'Merging {s_name} + {d_name} with {d_name2} data')
 
                 data=pd.merge(  
                                 data.drop_duplicates(subset=[s_col],keep='first'),
@@ -165,25 +178,52 @@ def main(argv):
                                 how='inner',
                                 suffixes=['_'+s_name,'_'+d_name2[2]],
                                 )
+                data_out=pd.merge(  
+                                data.drop_duplicates(subset=[s_col],keep='first'),
+                                d_data2.drop_duplicates(subset=[d_col2],keep='first'),
+                                left_on=s_col,
+                                right_on=d_col,
+                                how='outer',
+                                suffixes=['_'+s_name,'_'+d_name2[2]],
+                                )
+            print('idex_name',data.columns[:5])
+            print('idex_name',data_out.columns[:5])
+
+            data_out_c=data_out.set_index('sample_id')
+            data_c=data.set_index('sample_id')
+         
+            # print(data_out_c.head())
+            # print(data_c.head())
+            # print(data_out_c[(data_out_c.index.isin(data_c.index))==False])   
+            lost_ids=data_out_c[(data_out_c.index.isin(data_c.index))==False].index
+            lost_df=data_out_c.loc[lost_ids]
+
+
             data=ct.merge_duplicate_columns(data)
             data=ct.sort_data(data)
             data=ct.reorder_columns(data,verbose=True)
             data=ct.fix_depths(data)
             data=ct.round_depths(data)
 
-
+        
             d_list.append(data)
             print('----------------------------')
             output=f'{dir}{basename}_merged.csv'
+            lostoutput=f'{dir}logs/{basename}_merged lost entries.csv'
+
             print('output location:')
-            print(output)                    
+            print(output)                
+            print('lost sample output location:')
+            print(f'lost {len(lost_df)} samples')
+            print(lostoutput)                    
         except Exception as e:
             print('___________')
             print('MERGE FAIL')
-            traceback.print_exc(e)
+            # traceback.print_exc(e)
             print(e)
         try:
             data.to_csv(output,index=False)
+            lost_df.to_csv(lostoutput)
         except Exception as e:
             print(e)
 
