@@ -204,11 +204,19 @@ def round_depths(data,targets=['_m','_ft','recovery','depth'],verbose=False):
 
     return data
 
-def drop_hash(data, verbose=False):
+def drop_hash(data, verbose=True):
+    print('####DROP HASH #########')
     try:
-        drop=(data[data['depth_m']=='#VALUE!']).index
-        data=data.drop(drop,axis=0)
+        print('Dtype',data['depth_m'].dtype)   
+        data['depth_m']=pd.to_numeric(data['depth_m'],errors='coerce')
+        data['depth_m']=data['depth_m'].replace(0.0,np.nan)
         drop=(data[data['depth_m'].isna()==True]).index
+        print('Dropping ',drop)   
+        data=data.drop(drop,axis=0)
+        data['depth_m']=data['depth_m'].replace(0.0,np.nan)
+        data=data.drop(drop,axis=0)
+        print('Dropping ',drop)        
+        drop=(data[data['depth_m']==0]).index
         data=data.drop(drop,axis=0)
     except Exception as e :
         if verbose:
@@ -217,6 +225,11 @@ def drop_hash(data, verbose=False):
 
     try:
         drop=(data[(data['recovery_%']=='#DIV/0!')]).index
+        data['recovery_%']=pd.to_numeric(data['recovery_%'],errors='coerce')
+        data['recovery_%']=data['recovery_%'].replace(0.0,np.nan)
+        drop=(data[data['recovery_%'].isna()==True]).index
+        print('Dropping ',drop) 
+
         data=data.drop(drop,axis=0)
 
     except Exception as e :

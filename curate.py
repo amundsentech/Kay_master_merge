@@ -66,9 +66,9 @@ def main(argv):
                 data=ct.clean_column_names(data)
                 data=ct.merge_duplicate_columns(data)
                 data=ct.drop_work_order(data,verbose=verbose)
-                data=ct.round_depths(data,verbose=verbose)
                 data=ct.reorder_columns(data,col_order=config.col_order,verbose=verbose) 
                 data=ct.drop_hash(data)
+                data=ct.round_depths(data,verbose=verbose)
                 
                 ## this is a legacy line needed before the upgrade the new merge script performs this
                 #data=ct.drop_bad_rows(data,na_threshold=config.na_threshold,targets=config.targets,verbose=verbose)
