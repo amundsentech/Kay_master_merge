@@ -208,6 +208,8 @@ def drop_hash(data, verbose=False):
     try:
         drop=(data[data['depth_m']=='#VALUE!']).index
         data=data.drop(drop,axis=0)
+        drop=(data[data['depth_m'].isna()==True]).index
+        data=data.drop(drop,axis=0)
     except Exception as e :
         if verbose:
             print (e)
