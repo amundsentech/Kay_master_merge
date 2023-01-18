@@ -77,7 +77,7 @@ def merge_duplicate_columns(df, method="unique", sep=""):
 
     return df
 
-def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole_id','from_ft','to_ft','from_m','to_m','depth_ft','depth_m','depth','depthfrom','depthto']):
+def reorder_columns(data,verbose=False,col_order=['work_order','sample_id','hole_id','hole_id_samples','from_ft','to_ft','from_m','to_m','depth_ft','depth_m','depth','depthfrom','depthto']):
     new_order=col_order.copy()
     for c in col_order:
         i=new_order.index(c)
