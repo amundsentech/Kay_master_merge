@@ -88,7 +88,7 @@ def main(argv):
                 d_sub=d_name.split(' ')[2]
                 
                 if 'terraspec' in d_file:
-                    s_col=s_data.filter(like='file').columns[0]
+                    s_col=s_data.filter(like='file_').columns[0]
 
                 if 'geochemical' in d_file:
                     s_sub=s_name.split(' ')[1]
