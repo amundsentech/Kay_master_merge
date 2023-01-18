@@ -104,7 +104,7 @@ def main(argv):
                 print(f'Merging {s_name}  with {d_name} data')
                 print('using columns')
                 print(s_col,';',d_col)
-                
+
                 s_data[s_col]=s_data[s_col].str.strip('').str.upper()
                 d_data[d_col]=d_data[d_col].str.strip('').str.upper()
 
@@ -141,7 +141,7 @@ def main(argv):
 
                 s_data[s_col]=s_data[s_col].str.strip('').str.upper()
                 d_data[d_col]=d_data[d_col].str.strip('').str.upper()
-                d_data2[d_col2]=d_data[d_col2].str.strip('').str.upper()
+                d_data2[d_col2]=d_data2[d_col2].str.strip('').str.upper()
 
                 print(f'Merging {s_name} samples with {d_name} samples')
                 print('using columns')
