@@ -197,7 +197,7 @@ def round_depths(data,targets=['_m','_ft','recovery','depth'],verbose=False):
                     ser=pd.to_numeric(data[col],errors='coerce',)
                     ser=ser.astype(float)
 
-                    ser=ser.round(1)
+                    ser=ser.round(2)
                     ser=ser.map('{:.1f}'.format)
                     data.loc[ser[ser.notna()==True].index,col]=ser[ser.notna()==True]
                 except:
